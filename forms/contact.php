@@ -22,7 +22,7 @@
   $contact->smtp = array(
     'host' => 'smtp.gmail.com',
     'username' => 'hemanth.nitm@gmail.com',
-    'password' => 'pass',
+    'password' => 'password',
     'port' => '587'
   );
   
