@@ -42,7 +42,7 @@
     // Perform AJAX request or submit the form to the server for email processing
     // You can customize this part based on your specific server-side implementation
     // Example using fetch API:
-    fetch('path/to/email-processing.php', {
+    fetch('forms/contact.php', {
       method: 'POST',
       body: formData
     })
