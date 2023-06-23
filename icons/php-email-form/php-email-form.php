@@ -1,5 +1,5 @@
 <!-- Add the necessary JavaScript library -->
-<script src="path/to/validate.js"></script>
+<script src="icons/php-email-form/validate.js"></script>
 
 <!-- HTML form -->
 <form id="contact-form" method="POST">
