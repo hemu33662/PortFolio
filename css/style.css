@@ -415,6 +415,24 @@ section {
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
+.button {
+  background-color: white;
+  border: none;
+  color: skyblue;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+
+.full-width {
+  width: 100%;
+}
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
