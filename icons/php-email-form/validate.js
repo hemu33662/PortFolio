@@ -1,85 +1,54 @@
-/**
-* PHP Email Form Validation - v3.6
-* URL: https://bootstrapmade.com/php-email-form/
-* Author: BootstrapMade.com
-*/
-(function () {
-  "use strict";
+<script>
+  // Function to handle form submission
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent the form from submitting
 
-  let forms = document.querySelectorAll('.php-email-form');
+    // Validate the form inputs
+    if (validateForm()) {
+      // If the form is valid, proceed with sending the email
+      sendEmail();
+    } else {
+      // If the form is not valid, display error messages or handle accordingly
+      // You can customize this part based on your specific requirements
+      alert('Please fill in all the required fields.');
+    }
+  }
 
-  forms.forEach( function(e) {
-    e.addEventListener('submit', function(event) {
-      event.preventDefault();
+  // Function to validate the form inputs
+  function validateForm() {
+    var form = document.getElementById('contact-form');
+    return validate(form);
+  }
 
-      let thisForm = this;
+  // Function to send the email
+  function sendEmail() {
+    // Get the form data
+    var form = document.getElementById('contact-form');
+    var formData = new FormData(form);
 
-      let action = thisForm.getAttribute('action');
-      let recaptcha = thisForm.getAttribute('data-recaptcha-site-key');
-      
-      if( ! action ) {
-        displayError(thisForm, 'The form action property is not set!');
-        return;
-      }
-      thisForm.querySelector('.loading').classList.add('d-block');
-      thisForm.querySelector('.error-message').classList.remove('d-block');
-      thisForm.querySelector('.sent-message').classList.remove('d-block');
-
-      let formData = new FormData( thisForm );
-
-      if ( recaptcha ) {
-        if(typeof grecaptcha !== "undefined" ) {
-          grecaptcha.ready(function() {
-            try {
-              grecaptcha.execute(recaptcha, {action: 'php_email_form_submit'})
-              .then(token => {
-                formData.set('recaptcha-response', token);
-                php_email_form_submit(thisForm, action, formData);
-              })
-            } catch(error) {
-              displayError(thisForm, error);
-            }
-          });
-        } else {
-          displayError(thisForm, 'The reCaptcha javascript API url is not loaded!')
-        }
-      } else {
-        php_email_form_submit(thisForm, action, formData);
-      }
-    });
-  });
-
-  function php_email_form_submit(thisForm, action, formData) {
-    fetch(action, {
+    // Perform AJAX request or submit the form to the server for email processing
+    // You can customize this part based on your specific server-side implementation
+    // Example using fetch API:
+    fetch('forms/contact.php', {
       method: 'POST',
-      body: formData,
-      headers: {'X-Requested-With': 'XMLHttpRequest'}
+      body: formData
     })
-    .then(response => {
-      if( response.ok ) {
-        return response.text();
+    .then(function(response) {
+      // Handle the response from the server
+      if (response.ok) {
+        alert('Email sent successfully!');
+        form.reset(); // Reset the form after successful submission
       } else {
-        throw new Error(`${response.status} ${response.statusText} ${response.url}`); 
+        alert('Failed to send email. Please try again later.');
       }
     })
-    .then(data => {
-      thisForm.querySelector('.loading').classList.remove('d-block');
-      if (data.trim() == 'OK') {
-        thisForm.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset(); 
-      } else {
-        throw new Error(data ? data : 'Form submission failed and no error message returned from: ' + action); 
-      }
-    })
-    .catch((error) => {
-      displayError(thisForm, error);
+    .catch(function(error) {
+      console.log(error);
+      alert('An error occurred. Please try again later.');
     });
   }
 
-  function displayError(thisForm, error) {
-    thisForm.querySelector('.loading').classList.remove('d-block');
-    thisForm.querySelector('.error-message').innerHTML = error;
-    thisForm.querySelector('.error-message').classList.add('d-block');
-  }
-
-})();
+  // Attach the form submission handler
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', handleSubmit);
+</script>
