@@ -1,4 +1,4 @@
 ## PortFolio
 
 
-[Demo](SentimentalAnalysis.png](https://hemanthnasaram.netlify.app/)https://hemanthnasaram.netlify.app/](https://hemanthnasaram.netlify.app/)https://hemanthnasaram.netlify.app/)
+[Demo](https://hemanthnasaram.netlify.app/)
