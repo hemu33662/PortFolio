@@ -5,7 +5,7 @@ document.getElementById('feedback-form').addEventListener('submit', function(eve
   var formData = new FormData(form);
 
   var xhr = new XMLHttpRequest();
-  xhr.open(form.method, 'send_feedback.php', true);
+  xhr.open(form.method, 'forms/contact.php', true);
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4 && xhr.status === 200) {
       var response = xhr.responseText;

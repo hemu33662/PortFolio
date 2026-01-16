@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sentimental Analysis </title>
+  <title>Sentimental Analysis | Project Showcase</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -14,7 +14,11 @@
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 
   <!-- Vendor CSS Files -->
   <link href="icons/aos/aos.css" rel="stylesheet">
@@ -27,11 +31,444 @@
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 
- <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: june 21 2023
-  * Author: Nasaram Hemanth
-  ======================================================== -->
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --primary: #3b82f6;
+      --secondary: #8b5cf6;
+      --accent: #10b981;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    /* Scoped Styles for Main Content to avoid conflicting with Sidebar */
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+    }
+
+    #main {
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 20%);
+      min-height: 100vh;
+    }
+
+    /* Custom Reset for Project Section */
+    .project-container * {
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Utility */
+    .glass-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Top Bar for Try App Live */
+    .top-bar {
+      padding: 2rem 0;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .nav-btn {
+      padding: 0.75rem 1.5rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 99px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    /* Hero */
+    .hero-section {
+      padding: 4rem 0 6rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .hero-section h1 span {
+      background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      /* Standard property */
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-section p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      line-height: 1.6;
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 6rem;
+    }
+
+    .stat-item h3 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-item p {
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* Architecture Section */
+    .architecture-section {
+      margin-bottom: 8rem;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+      font-weight: 700;
+    }
+
+    .section-header h2::after {
+      display: none;
+      /* Remove default portfolio underline */
+    }
+
+    .flow-diagram {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding: 3rem;
+      border-radius: 30px;
+      background: rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    .flow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      z-index: 2;
+    }
+
+    .step-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--card-bg), rgba(255, 255, 255, 0.02));
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .arrow {
+      font-size: 2rem;
+      color: var(--text-muted);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: 0.3;
+        transform: translateX(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateX(5px);
+      }
+
+      100% {
+        opacity: 0.3;
+        transform: translateX(0);
+      }
+    }
+
+    /* Models Table/Cards - Spreading Effect */
+    /* Models Table/Cards - Spreading Effect */
+    .models-grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      padding: 4rem 0;
+      perspective: 1000px;
+    }
+
+    /* Mobile Fallback */
+    @media (max-width: 991px) {
+      .models-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+
+      .model-card {
+        margin-left: 0 !important;
+        transform: none !important;
+        opacity: 1 !important;
+      }
+    }
+
+    .model-card {
+      /* Fixed Dimensions for "Playing Card" feel */
+      width: 280px !important;
+      height: 380px !important;
+      flex-shrink: 0;
+      /* Prevent squishing */
+      box-sizing: border-box;
+
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      /* Center content vertically */
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+
+      /* Spreading Transitions */
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+      margin-left: -60px;
+      /* Deeper Overlap */
+      transform-origin: bottom center;
+      z-index: 1;
+    }
+
+    /* Fan Stack Effect (Default State) */
+    .model-card:nth-child(1) {
+      transform: rotate(-10deg) translateY(20px);
+      z-index: 1;
+    }
+
+    .model-card:nth-child(2) {
+      transform: rotate(-5deg) translateY(10px);
+      z-index: 2;
+    }
+
+    .model-card:nth-child(3) {
+      transform: rotate(0deg) translateY(0px);
+      z-index: 3;
+    }
+
+    .model-card:nth-child(4) {
+      transform: rotate(5deg) translateY(20px);
+      z-index: 4;
+    }
+
+    /* Content Visibility - Hide Details Default */
+    .model-card h4 {
+      margin: 0;
+      font-weight: 700;
+      color: var(--text-main);
+      transition: all 0.4s ease;
+      position: absolute;
+      /* Lock position for centering */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      padding: 0 1rem;
+      z-index: 2;
+    }
+
+    .model-card p,
+    .model-card .accuracy-badge,
+    .model-card span {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s ease;
+    }
+
+    /* Container Hover: Spread and Straighten */
+    .models-grid:hover .model-card {
+      margin-left: 20px;
+      transform: rotate(0deg) scale(0.95);
+      opacity: 0.6;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .models-grid:hover .model-card:first-child {
+      margin-left: 0;
+    }
+
+    /* Active Card Hover: Pop Up & Reveal */
+    .models-grid .model-card:hover {
+      transform: scale(1.1) translateY(-30px) !important;
+      opacity: 1;
+      z-index: 100;
+      border-color: var(--accent);
+      box-shadow: 0 0 50px rgba(16, 185, 129, 0.4);
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+      justify-content: flex-start;
+      /* Move content to top flow */
+      padding-top: 6rem;
+    }
+
+    /* Slide Title Up */
+    .models-grid .model-card:hover h4 {
+      top: 20px;
+      transform: translateY(0);
+    }
+
+    /* Fade In Details */
+    .models-grid .model-card:hover p,
+    .models-grid .model-card:hover .accuracy-badge,
+    .models-grid .model-card:hover span {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Delay details slightly for effect */
+    .models-grid .model-card:hover .accuracy-badge {
+      transition-delay: 0.1s;
+    }
+
+    .models-grid .model-card:hover p {
+      transition-delay: 0.2s;
+    }
+
+    /* First card shouldn't overlap left */
+    .model-card:first-child {
+      margin-left: 0;
+    }
+
+    /* Container Hover: Spread and Straighten */
+    .models-grid:hover .model-card {
+      margin-left: 20px;
+      transform: rotate(0deg) scale(0.95);
+      opacity: 0.6;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .models-grid:hover .model-card:first-child {
+      margin-left: 0;
+    }
+
+    /* Active Card Hover: Pop Up */
+    .models-grid .model-card:hover {
+      transform: scale(1.1) translateY(-30px) !important;
+      opacity: 1;
+      z-index: 100;
+      border-color: var(--accent);
+      box-shadow: 0 0 50px rgba(16, 185, 129, 0.4);
+      background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.98));
+    }
+
+
+
+    .model-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px;
+      background: var(--card-border);
+    }
+
+    .model-card.winner::before {
+      background: var(--accent);
+      box-shadow: 0 0 20px var(--accent);
+    }
+
+    .model-card h4 {
+      margin-top: 1rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .accuracy-badge {
+      font-size: 3rem;
+      font-weight: 800;
+      margin: 1.5rem 0;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .winner .accuracy-badge {
+      color: var(--accent);
+      text-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+    }
+
+    /* Deep Dive Styles */
+    .project-details-section h3 {
+      color: var(--text-main);
+    }
+
+    .project-details-section strong {
+      color: var(--text-main);
+    }
+
+    /* Interactive Background */
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      /* Behind content */
+      pointer-events: auto;
+      /* Enable mouse interaction */
+    }
+
+    /* Ensure content sits above canvas */
+    .hero-section>* {
+      position: relative;
+      z-index: 1;
+    }
+  </style>
 </head>
 
 <body>
@@ -43,139 +480,323 @@
   <header id="header">
     <div class="d-flex flex-column">
 
-        <div class="profile">
-            <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-            <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
-            <div class="social-links mt-3 text-center">
-              <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
-              <a href="mailto:hemanth.nitm@gmail.com?subject=Subject%20of%20the%20Email&body=Body%20of%20the%20Email" class="gmail"><i class="bx bxl-gmail"></i></a>
-              <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
-            </div>
-          </div>
-    
-          <nav id="navbar" class="nav-menu navbar">
-            <ul>
-              <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-              <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-              <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-              <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-              <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-            </ul>
-          </nav><!-- .nav-menu -->
+      <div class="profile">
+        <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:hemanth.nitm@gmail.com?subject=Subject%20of%20the%20Email&body=Body%20of%20the%20Email"
+            class="gmail"><i class="bx bxl-gmail"></i></a>
+          <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
         </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+              <span>Portfolio</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
   </header><!-- End Header -->
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
+    <div class="container project-container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Sentimental_Analysis</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Project Details</li>
-          </ol>
+      <!-- Custom Top Bar inside Content -->
+      <div class="top-bar" style="gap: 1rem;" data-aos="fade-down">
+        <a href="index.html" class="nav-btn"
+          style="background: transparent; border-color: var(--text-muted); color: var(--text-muted);">Home</a>
+        <a href="#" class="nav-btn">Try App Live</a>
+      </div>
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <h1 data-aos="fade-up">Decoding Emotions <br><span>With Machine Learning</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100">An advanced NLP system that transforms raw customer feedback into
+          actionable insights using
+          state-of-the-art classification algorithms.</p>
+
+        <div class="stats-grid">
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="200">
+            <h3><span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1"
+                class="purecounter">0</span></h3>
+            <p>ML Models</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="300">
+            <h3><span data-purecounter-start="0" data-purecounter-end="81" data-purecounter-duration="1"
+                class="purecounter">0</span>%</h3>
+            <p>Peak Accuracy</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="400">
+            <h3>
+              < <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1"
+                class="purecounter">0</span>ms
+            </h3>
+            <p>Inference Time</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture -->
+      <section class="architecture-section">
+        <div class="section-header" data-aos="fade-up">
+          <h2>System Architecture</h2>
+          <p style="color: var(--text-muted);">From keystroke to insight</p>
         </div>
 
-      </div>
-    </section><!-- End Breadcrumbs -->
+        <div class="flow-diagram">
+          <!-- Lines connecting would be better with SVG, using Flex gap for simplicity -->
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="100">
+            <div class="step-icon">👤</div>
+            <span>User Input</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="150">➜</div>
 
-        <div class="row gy-4">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="200">
+            <div class="step-icon">🔌</div>
+            <span>Django API</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="250">➜</div>
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="300">
+            <div class="step-icon">🧹</div>
+            <span>Text Cleaning</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="350">➜</div>
 
-                <div class="swiper-slide">
-                  <img src="img/SentimentalAnalysis/SentimentalAnalysis.png" alt="">
-                </div>
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="400">
+            <div class="step-icon">🧮</div>
+            <span>Vectorization</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="450">➜</div>
 
-                <div class="swiper-slide">
-                  <img src="img/SentimentalAnalysis/SentimentalAnalyisis_Result.png" alt="">
-                </div>
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="500">
+            <div class="step-icon">🤖</div>
+            <span>Prediction</span>
+          </div>
+        </div>
+      </section>
 
+      <!-- Benchmarks -->
+      <section>
+        <div class="section-header" data-aos="fade-up">
+          <h2>Model Benchmarks</h2>
+          <p style="color: var(--text-muted);">Comparing 4 different architectural approaches</p>
+        </div>
 
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+        <div class="models-grid">
+          <!-- Model 1 (Winner) -->
+          <div class="glass-card model-card winner" data-aos="fade-up" data-aos-delay="100">
+            <h4>Multinomial Naïve Bayes</h4>
+            <span style="color: var(--accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Top
+              Performer</span>
+            <div class="accuracy-badge"><span class="card-counter" data-target="81.0">81.0</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Uses CountVectorizer. Best suited for
+              discrete features like word counts.</p>
           </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Machine Learning</li>
-                <li><strong>Project date</strong>: 01 March, 2022</li>
-                <li><strong>Project URL</strong>: <a href="https://github.com/hemu33662/Sentimental_Analysis">Github Link</a></li>
+          <!-- Model 2 -->
+          <div class="glass-card model-card" data-aos="fade-up" data-aos-delay="200">
+            <h4>Naïve Bayes</h4>
+            <span
+              style="color: var(--secondary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Standard</span>
+            <div class="accuracy-badge"><span class="card-counter" data-target="77.5">77.5</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Uses TF-IDF. Solid baseline for text
+              classification tasks.</p>
+          </div>
+
+          <!-- Model 3 -->
+          <div class="glass-card model-card" data-aos="fade-up" data-aos-delay="300">
+            <h4>Optimized SVM</h4>
+            <span
+              style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Pipeline</span>
+            <div class="accuracy-badge"><span class="card-counter" data-target="77.0">77.0</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">RBF Kernel with TF-IDF pipeline. Good for
+              high-dimensional spaces.</p>
+          </div>
+
+          <!-- Model 4 -->
+          <div class="glass-card model-card" data-aos="fade-up" data-aos-delay="400">
+            <h4>Standard SVM</h4>
+            <span
+              style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Baseline</span>
+            <div class="accuracy-badge"><span class="card-counter" data-target="75.5">75.5</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Basic implementation without pipeline
+              optimization.</p>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const cards = document.querySelectorAll('.model-card');
+
+          cards.forEach(card => {
+            const counter = card.querySelector('.card-counter');
+            const target = parseFloat(counter.getAttribute('data-target'));
+            let animating = false;
+
+            card.addEventListener('mouseenter', () => {
+              if (animating) return;
+              animating = true;
+
+              let start = 0;
+              const duration = 1000;
+              const startTime = performance.now();
+
+              const step = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+
+                // Ease out quart
+                const ease = 1 - Math.pow(1 - progress, 4);
+
+                const current = start + (target - start) * ease;
+                counter.innerText = current.toFixed(1);
+
+                if (progress < 1) {
+                  requestAnimationFrame(step);
+                } else {
+                  animating = false;
+                }
+              };
+
+              requestAnimationFrame(step);
+            });
+
+            card.addEventListener('mouseleave', () => {
+              // Reset to 0 so it animates again on next hover? 
+              // Creating a slight delay or immediate reset
+              counter.innerText = "0.0";
+              animating = false;
+            });
+          });
+        });
+      </script>
+
+      <!-- Detailed Project Info -->
+      <section class="project-details-section" style="margin-bottom: 6rem; margin-top: 6rem;" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Project Deep Dive</h2>
+          <p style="color: var(--text-muted);">Comprehensive analysis of the workflow and impact.</p>
+        </div>
+
+        <div class="glass-card" style="display: flex; flex-wrap: wrap; gap: 3rem;">
+
+          <!-- Main Content -->
+          <div style="flex: 2; min-width: 300px;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;">Sentimental Analysis</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
+              Sentiment analysis is the automated process of identifying and classifying subjective information in
+              text data. This might be an opinion, a judgment, or a feeling about a particular topic or product
+              feature. In this sentiment analysis, the most common type is ‘polarity detection’, which involves
+              classifying statements as positive, negative, or neutral. It is a tool that automatically monitors
+              emotions in conversations on social media platforms.
+            </p>
+
+            <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Workflow Steps</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">1. Read the
+                  Data Frame</strong>
+                <span style="color: var(--text-muted);">Importing the already classified data frame to train and
+                  test the model.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">2. Data
+                  Analysis</strong>
+                <span style="color: var(--text-muted);">Finding whether the majority of customers are positive
+                  or negative and identifying the most used keywords.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">3. Classifying
+                  Tweets</strong>
+                <span style="color: var(--text-muted);">Classifying reviews into “positive” and “negative” to
+                  use as training data for the sentiment classification model.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">4. Building the
+                  Model</strong>
+                <span style="color: var(--text-muted);">Building the sentiment analysis model. The data frame is
+                  split into a training set (80%) and a test set (20%).</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">5.
+                  Vectorization</strong>
+                <span style="color: var(--text-muted);">Using a count vectorizer from the Scikit-learn library
+                  to transform text into a bag-of-words model.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">6.
+                  Training</strong>
+                <span style="color: var(--text-muted);">Training the model using methods like SVM, Pipeline,
+                  Naive Bayes, and Multinomial NB.</span>
+              </li>
+              <li>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">7. Accuracy &
+                  Usage</strong>
+                <span style="color: var(--text-muted);">Finding the accuracy of the model and using it to
+                  classify new text as positive or negative.</span>
+              </li>
+            </ul>
+
+            <h3 style="color: var(--secondary); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem;">Benefits
+              & Convenience</h3>
+            <ul style="color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
+              <li style="margin-bottom: 0.5rem;"><strong>Understanding Customer Feelings:</strong> Identities
+                whether opinions are positive, negative, or neutral, providing valuable insights into customer
+                satisfaction.</li>
+              <li><strong>Improved Decision Making:</strong> Businesses can make data-driven decisions to enhance
+                their offerings and address customer concerns.</li>
+            </ul>
+          </div>
+
+          <!-- Sidebar Info -->
+          <div style="flex: 1; min-width: 250px;">
+            <div
+              style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3
+                style="color: var(--text-main); margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">
+                Project Info</h3>
+              <ul style="list-style: none; padding: 0; color: var(--text-muted); line-height: 2;">
+                <li><strong style="color: var(--text-main);">Category:</strong> Machine Learning</li>
+                <li><strong style="color: var(--text-main);">Project Date:</strong> 01 March, 2022</li>
+                <li><strong style="color: var(--text-main);">Project URL:</strong> <a
+                    href="https://github.com/hemu33662/Sentimental_Analysis"
+                    style="color: var(--primary); text-decoration: none;">GitHub Link</a></li>
               </ul>
             </div>
-            <div class="portfolio-description">
-              <h2>Sentimental_Analysis</h2>
-              <p>
-                Sentiment analysis is the automated process of identifying and classifying subjective information in text data.
-                 This might be an opinion, a judgment, or a feeling about a particular topic or product feature. 
-                 In this sentiment analysis, the most common type is ‘polarity detection’, which involves classifying statements as positive,
-                  negative, or neutral. It is a tool that automatically monitors emotions in conversations on social media platforms.
-              </p>
-            </div>
-            <h2>STEPS</h2>
-            <li>Read the Data frame:</li>
-            <p>it means importing the already classified data frame to train and test the model.</p>
-            <li>Data Analysis:</li>
-            <p>it means to find majority customers are positive or negative and finding the most used keywords.</p>
-            <li>Classifying Tweets:</li>
-            <p>it means we will classify reviews into “positive” and “negative,” so we can use this as training data for our sentiment classification model.</p>
-            <li>Building the Model:</li>
-            <p>we can build the sentiment analysis model. This model will take reviews in as input. It will then come up 
-              with a prediction on whether the review is positive or negative. For this we will split the data frame into train 
-              and test set of 80% and 20% respectively.</p>
-            <li>Next, we will use a count vectorizer from the Scikit-learn library. This will transform the text in our data frame into 
-              a bag of words model, which will contain a sparse matrix of integers. The number of occurrences of each word will be counted
-               and printed.</li>
-            <li>Then we will train the model. Here we used the 4 methods SVM, Pipeline, Naive Bayes, and Multinomial NB to train and predict
-               the output for the test set.</li>
-            <li>Now we will find the accuracy of the model and can use the model to classify the given text to positive or negative</li>
-            
-            
-              <div class="portfolio-info">
-                <div class="portfolio-description">
-                  <h2>Benefits and Convenience:</h2>
-                  <li>Understanding Customer Feelings: Sentiment analysis helps businesses understand how customers feel about their products, services, or brand. It identifies whether opinions are positive, negative, or neutral, providing valuable insights into customer satisfaction and preferences.</li>
-                  <li>Improved Decision Making: By analyzing sentiments in customer feedback and social media conversations, businesses can make data-driven decisions to enhance their offerings, address customer concerns, and improve overall customer experience.</li>
-                  <li>In simple terms, sentiment analysis helps businesses understand customer feelings, make better decisions, monitor sentiments in real time, manage their reputation, analyze competition, detect and respond to crises, and listen to customer feedback for improved marketing efforts.</li>                 
-                </div>
-            
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section><!-- End Portfolio Details Section -->
+    </div>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
         Designed by Hemanth
       </div>
     </div>
   </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="icons/purecounter/purecounter_vanilla.js"></script>
@@ -190,6 +811,8 @@
 
   <!-- Template Main JS File -->
   <script src="jss/main.js"></script>
+  <!-- Interactive BG -->
+  <script src="jss/neural-bg.js"></script>
 
 </body>
 
