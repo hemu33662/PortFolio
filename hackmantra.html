@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>HackMantra</title>
+  <title>HackMantra | Project Showcase</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -14,7 +14,11 @@
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 
   <!-- Vendor CSS Files -->
   <link href="icons/aos/aos.css" rel="stylesheet">
@@ -26,12 +30,8 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/portfolio.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: june 21 2023
-  * Author: Nasaram Hemanth
-  ======================================================== -->
 </head>
 
 <body>
@@ -43,127 +43,227 @@
   <header id="header">
     <div class="d-flex flex-column">
 
-        <div class="profile">
-            <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-            <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
-            <div class="social-links mt-3 text-center">
-              <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
-              <a href="mailto:hemanth.nitm@gmail.com?subject=Subject%20of%20the%20Email&body=Body%20of%20the%20Email" class="gmail"><i class="bx bxl-gmail"></i></a>
-              <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
-            </div>
-          </div>
-    
-          <nav id="navbar" class="nav-menu navbar">
-            <ul>
-              <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-              <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-              <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-              <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-              <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-            </ul>
-          </nav><!-- .nav-menu -->
+      <div class="profile">
+        <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:hemanth.nitm@gmail.com?subject=Subject%20of%20the%20Email&body=Body%20of%20the%20Email"
+            class="gmail"><i class="bx bxl-gmail"></i></a>
+          <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
         </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+              <span>Portfolio</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
   </header><!-- End Header -->
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
+    <div class="container project-container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>HackMantra</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Project Details</li>
-          </ol>
+      <!-- Custom Top Bar inside Content -->
+      <div class="top-bar" style="gap: 1rem;" data-aos="fade-down">
+        <a href="index.html" class="nav-btn"
+          style="background: transparent; border-color: var(--text-muted); color: var(--text-muted);">Home</a>
+        <a href="https://github.com/hemu33662/hackmantra" class="nav-btn">View on GitHub</a>
+      </div>
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <h1 data-aos="fade-up">HackMantra <br><span>Drone Delivery System</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100">Connecting rural areas with essential food and medicine supplies
+          through an automated government drone delivery network.</p>
+
+        <div class="stats-grid">
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="200">
+            <h3><i class="bi bi-geo-alt-fill" style="color: var(--accent);"></i></h3>
+            <p>Smart Location</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="300">
+            <h3><i class="bi bi-box-seam" style="color: var(--secondary);"></i></h3>
+            <p>Automated Delivery</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="400">
+            <h3><i class="bi bi-heart-pulse-fill" style="color: var(--primary);"></i></h3>
+            <p>Life Saving</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow/Architecture -->
+      <section class="architecture-section">
+        <div class="section-header" data-aos="fade-up">
+          <h2>System Workflow</h2>
+          <p style="color: var(--text-muted);">From request to delivery</p>
         </div>
 
-      </div>
-    </section><!-- End Breadcrumbs -->
+        <div class="flow-diagram">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="100">
+            <div class="step-icon">📝</div>
+            <span>Registration</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="150">➜</div>
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="200">
+            <div class="step-icon">📍</div>
+            <span>Request & Location</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="250">➜</div>
 
-        <div class="row gy-4">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="300">
+            <div class="step-icon">🚁</div>
+            <span>Drone Dispatch</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="350">➜</div>
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="400">
+            <div class="step-icon">📦</div>
+            <span>Delivery & Tracking</span>
+          </div>
+        </div>
+      </section>
 
-                <div class="swiper-slide">
-                  <img src="img/HackMantra/Hackmantra_registration.png" alt="">
-                </div>
+      <!-- Demo Image Section -->
+      <section>
+        <div class="section-header" data-aos="fade-up">
+          <h2>Project Gallery</h2>
+          <p style="color: var(--text-muted);">Interface and Functionality</p>
+        </div>
 
-                <div class="swiper-slide">
-                  <img src="img/HackMantra/Hackmantra_Loaction.png" alt="">
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+        <div class="models-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+          <div class="glass-card"
+            style="width: 100%; max-width: 500px; padding: 1rem; transform: none; box-shadow: none;" data-aos="fade-up"
+            data-aos-delay="100">
+            <img src="img/HackMantra/Hackmantra_registration.png" alt="Registration Screen"
+              style="width: 100%; border-radius: 12px; display: block;">
+            <p style="text-align: center; margin-top: 1rem; color: var(--text-muted);">User Registration</p>
+          </div>
+          <div class="glass-card"
+            style="width: 100%; max-width: 500px; padding: 1rem; transform: none; box-shadow: none;" data-aos="fade-up"
+            data-aos-delay="200">
+            <img src="img/HackMantra/Hackmantra_Loaction.png" alt="Location Screen"
+              style="width: 100%; border-radius: 12px; display: block;">
+            <p style="text-align: center; margin-top: 1rem; color: var(--text-muted);">Location Tracking</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Detailed Project Info -->
+      <section class="project-details-section" style="margin-bottom: 6rem; margin-top: 6rem;" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Project Overview</h2>
+          <p style="color: var(--text-muted);">Details, features, and future plans.</p>
+        </div>
+
+        <div class="glass-card" style="display: flex; flex-wrap: wrap; gap: 3rem;">
+
+          <!-- Main Content -->
+          <div style="flex: 2; min-width: 300px;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;">Food & Medicine Request System
+            </h3>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
+              This website serves as a vital bridge for rural communities, allowing them to request essential supplies
+              and medicines. The system captures user details and precise location data to assign a government drone for
+              efficient delivery, ensuring help reaches remote areas where traditional logistics might fail.
+            </p>
+
+            <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Key Features</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">User
+                  Registration</strong>
+                <span style="color: var(--text-muted);">Secure signup process for users to create profiles.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Requirement
+                  Gathering</strong>
+                <span style="color: var(--text-muted);">Intuitive interface for users to list specific food or medical
+                  needs.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Location
+                  Services</strong>
+                <span style="color: var(--text-muted);">Accurate geolocation capture to guide drone delivery.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Drone Dispatch</strong>
+                <span style="color: var(--text-muted);">System to assign and track drones for delivery (Planned).</span>
+              </li>
+            </ul>
+
+            <h3 style="color: var(--secondary); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem;">Future
+              Roadmap (To Do)</h3>
+            <ul style="color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
+              <li style="margin-bottom: 0.5rem;"><strong>Drone Integration:</strong> Complete the backend logic for
+                sending and tracking autonomous drones.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Multilingual Support:</strong> Implement "Choose Language"
+                option to make the platform accessible to diverse rural populations.</li>
+            </ul>
           </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Project date</strong>: 07 November, 2022</li>
-                <li><strong>Project URL</strong>: <a href="https://github.com/hemu33662/hackmantra">Github Link</a></li>
+          <!-- Sidebar Info -->
+          <div style="flex: 1; min-width: 250px;">
+            <div
+              style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3
+                style="color: var(--text-main); margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">
+                Project Info</h3>
+              <ul style="list-style: none; padding: 0; color: var(--text-muted); line-height: 2;">
+                <li><strong style="color: var(--text-main);">Category:</strong> Web Design</li>
+                <li><strong style="color: var(--text-main);">Project Date:</strong> 07 November, 2022</li>
+                <li><strong style="color: var(--text-main);">Project URL:</strong> <a
+                    href="https://github.com/hemu33662/hackmantra"
+                    style="color: var(--primary); text-decoration: none;">GitHub Link</a></li>
               </ul>
             </div>
-
-            
-              <div class="portfolio-info">
-                <div class="portfolio-description">
-                  <h2>FOOD And Medicine Request Website</h2>
-                  <p>
-                    This Website takes the details and supplies required by people in rural areas and assigns a drone from 
-                    the government to deliver food or medicine to those people
-                  </p>
-                </div>
-            </div>        
-              <div class="portfolio-info">
-                <div class="portfolio-description">
-                  <h2>Features</h2>
-                  <li>User Registration.</li>
-                  <li>Asking Requirements.</li>
-                  <li>Getting Location.</li>
-                  <li>Sending Drone and Tracking them.</li>        
-                </div>
+            <div
+              style="margin-top: 2rem; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3 style="color: var(--text-main); margin-bottom: 1rem;">Core Tech</h3>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span
+                  style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">Web
+                  Design</span>
+                <span
+                  style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">Geolocation</span>
+                <span
+                  style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">Drone
+                  Logistics</span>
+              </div>
             </div>
-                <div class="portfolio-info">
-                  <div class="portfolio-description">
-                    <h2>To Do</h2>
-                    <li>Sending drones.</li>
-                    <li>Tracking drones.</li>
-                    <li>Implementing "Choose Language" option.</li>
-                         
-                  </div>
-            </div>
-                    
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section><!-- End Portfolio Details Section -->
+    </div>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      
       <div class="credits">
         Designed by Hemanth
       </div>
     </div>
   </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="icons/purecounter/purecounter_vanilla.js"></script>
@@ -178,6 +278,8 @@
 
   <!-- Template Main JS File -->
   <script src="jss/main.js"></script>
+  <!-- Interactive BG -->
+  <script src="jss/neural-bg.js"></script>
 
 </body>
 

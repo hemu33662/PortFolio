@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Click-to-Join </title>
+  <title>Click-to-Join | Project Showcase</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -14,7 +14,11 @@
   <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 
   <!-- Vendor CSS Files -->
   <link href="icons/aos/aos.css" rel="stylesheet">
@@ -26,12 +30,8 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
+  <link href="css/portfolio.css" rel="stylesheet">
 
- <!-- =======================================================
-  * Template Name: iPortfolio
-  * Updated: june 21 2023
-  * Author: Nasaram Hemanth
-  ======================================================== -->
 </head>
 
 <body>
@@ -43,144 +43,219 @@
   <header id="header">
     <div class="d-flex flex-column">
 
-        <div class="profile">
-            <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-            <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
-            <div class="social-links mt-3 text-center">
-              <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
-              <a href="mailto:hemanth.nitm@gmail.com?subject=Subject%20of%20the%20Email&body=Body%20of%20the%20Email" class="gmail"><i class="bx bxl-gmail"></i></a>
-              <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
-            </div>
-          </div>
-    
-          <nav id="navbar" class="nav-menu navbar">
-            <ul>
-              <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-              <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-              <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-              <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-              <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-            </ul>
-          </nav><!-- .nav-menu -->
+      <div class="profile">
+        <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:hemanth.nitm@gmail.com?subject=Subject%20of%20the%20Email&body=Body%20of%20the%20Email"
+            class="gmail"><i class="bx bxl-gmail"></i></a>
+          <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
         </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
+              <span>Portfolio</span></a></li>
+          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
   </header><!-- End Header -->
 
   <main id="main">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
+    <div class="container project-container">
 
-        <div class="d-flex justify-content-between align-items-center">
-          <h2>Click-to-Join</h2>
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li>Project Details</li>
-          </ol>
+      <!-- Custom Top Bar inside Content -->
+      <div class="top-bar" style="gap: 1rem;" data-aos="fade-down">
+        <a href="index.html" class="nav-btn"
+          style="background: transparent; border-color: var(--text-muted); color: var(--text-muted);">Home</a>
+        <a href="https://github.com/hemu33662/classs_routine" class="nav-btn">View on GitHub</a>
+      </div>
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <h1 data-aos="fade-up">Click-to-Join <br><span>Effortless Class Access</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100">Simplifying the process for students to join Google Meet classes with
+          a single click, eliminating manual URL entry.</p>
+
+        <div class="stats-grid">
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="200">
+            <h3><i class="bi bi-cursor-fill" style="color: var(--accent);"></i></h3>
+            <p>One-Click Join</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="300">
+            <h3><i class="bi bi-clock-history" style="color: var(--secondary);"></i></h3>
+            <p>Time Saver</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="400">
+            <h3><i class="bi bi-emoji-smile" style="color: var(--primary);"></i></h3>
+            <p>User Friendly</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Workflow/Architecture -->
+      <section class="architecture-section">
+        <div class="section-header" data-aos="fade-up">
+          <h2>How It Works</h2>
+          <p style="color: var(--text-muted);">Streamlined user experience</p>
         </div>
 
-      </div>
-    </section><!-- End Breadcrumbs -->
+        <div class="flow-diagram">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="100">
+            <div class="step-icon">👤</div>
+            <span>Student</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="150">➜</div>
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="200">
+            <div class="step-icon">🖱️</div>
+            <span>Click Class Name</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="250">➜</div>
 
-        <div class="row gy-4">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="300">
+            <div class="step-icon">🔗</div>
+            <span>Google Meet Link</span>
+          </div>
+          <div class="arrow" data-aos="fade-right" data-aos-delay="350">➜</div>
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+          <div class="flow-step" data-aos="fade-right" data-aos-delay="400">
+            <div class="step-icon">📹</div>
+            <span>Join Session</span>
+          </div>
+        </div>
+      </section>
 
-                <div class="swiper-slide">
-                  <img src="img/ClickToJoin/CLass_demo.png" alt="">
-                </div>
+      <!-- Demo Image Section -->
+      <section>
+        <div class="section-header" data-aos="fade-up">
+          <h2>Project Demo</h2>
+          <p style="color: var(--text-muted);">Visual interface of the routine manager</p>
+        </div>
 
+        <div class="models-grid" style="display: flex; justify-content: center;">
+          <div class="glass-card"
+            style="width: 100%; max-width: 800px; padding: 1rem; transform: none; box-shadow: none;" data-aos="fade-up"
+            data-aos-delay="100">
+            <img src="img/ClickToJoin/CLass_demo.png" alt="Class Demo"
+              style="width: 100%; border-radius: 12px; display: block;">
+          </div>
+        </div>
+      </section>
 
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
+      <!-- Detailed Project Info -->
+      <section class="project-details-section" style="margin-bottom: 6rem; margin-top: 6rem;" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Project Overview</h2>
+          <p style="color: var(--text-muted);">Details, features, and benefits.</p>
+        </div>
+
+        <div class="glass-card" style="display: flex; flex-wrap: wrap; gap: 3rem;">
+
+          <!-- Main Content -->
+          <div style="flex: 2; min-width: 300px;">
+            <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;">Click-to-Join System</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
+              The web page simplifies the process for students to join Google Meet classes. It displays a list of
+              classes with clickable class names. When a student clicks on a class name, the web page automatically
+              joins the corresponding Google Meet session for that class. This saves time and eliminates the need for
+              students to manually enter the Google Meet URL for each class. The web page provides a user-friendly
+              experience and streamlines access to online classes.
+            </p>
+
+            <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Key Features</h3>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Clickable Class
+                  Names</strong>
+                <span style="color: var(--text-muted);">Classes are listed as hyperlinks, triggering an action to join
+                  immediately upon clicking.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Google Meet
+                  Integration</strong>
+                <span style="color: var(--text-muted);">Direct integration with Google Meet links, handling redirection
+                  seamlessly.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Clean User
+                  Interface</strong>
+                <span style="color: var(--text-muted);">A simple, organized list of classes including week, time, and
+                  subject code.</span>
+              </li>
+            </ul>
+
+            <h3 style="color: var(--secondary); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem;">Benefits &
+              Convenience</h3>
+            <ul style="color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
+              <li style="margin-bottom: 0.5rem;"><strong>Simplified Access:</strong> Eliminates manual searching or
+                typing of URLs.</li>
+              <li style="margin-bottom: 0.5rem;"><strong>Time Efficiency:</strong> Join classes with just a few clicks,
+                minimizing disruptions.</li>
+              <li><strong>Reduced Errors:</strong> Lowers the chance of joining the wrong meeting or mistyping links.
+              </li>
+            </ul>
           </div>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Web Design</li>
-                <li><strong>Project date</strong>: 01 August, 2021</li>
-                <li><strong>Project URL</strong>: <a href="https://github.com/hemu33662/classs_routine">Github Link</a></li>
+          <!-- Sidebar Info -->
+          <div style="flex: 1; min-width: 250px;">
+            <div
+              style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3
+                style="color: var(--text-main); margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">
+                Project Info</h3>
+              <ul style="list-style: none; padding: 0; color: var(--text-muted); line-height: 2;">
+                <li><strong style="color: var(--text-main);">Category:</strong> Web Design</li>
+                <li><strong style="color: var(--text-main);">Project Date:</strong> 01 August, 2021</li>
+                <li><strong style="color: var(--text-main);">Project URL:</strong> <a
+                    href="https://github.com/hemu33662/classs_routine"
+                    style="color: var(--primary); text-decoration: none;">GitHub Link</a></li>
               </ul>
             </div>
-            <div class="portfolio-description">
-              <h2>Click-to-Join: Effortless Access to Google Meet Classes</h2>
-              <p>
-                The web page simplifies the process for students to join Google Meet classes.
-                 It displays a list of classes with clickable class names. When a student clicks on a class name, 
-                 the web page automatically joins the corresponding Google Meet session for that class.
-                  This saves time and eliminates the need for students to manually enter the Google Meet URL for each class.
-                   The web page provides a user-friendly experience and streamlines access to online classes.
-              </p>
-              <li>Class Information:</li>
-              <p>The web page would display a list of classes, typically with the class name, week, time, and subject code.</p>
-              <li>User Interface:</li>
-              <p>The web page would have a clean and user-friendly interface where students can easily navigate and find their desired classes.</p>
-              <li>Clickable Class Names:</li>
-              <p>Each class name listed on the web page would be clickable, typically implemented as a hyperlink. When a student clicks on a class name, it triggers an action.</p>
-              <li>Class Information:</li>
-              <p>The web page would display a list of classes, typically with the class name, week, time, and subject code.</p>
-              <li>Action:</li>
-              <p>When a student clicks on a class name, the web page initiates an action to join the corresponding Google Meet session for that class.</p>
-              <li>Google Meet Integration:</li>
-              <p>The web page would utilize the Google Meet link to join the specified Google Meet session associated with the class. This integration may require authentication with the student's Google account and appropriate permissions.</p>
-              <li>Joining the Class:</li>
-              <p>After the web page initiates the action to join the Google Meet session, it will redirect the student to the Google Meet platform, where they can join the class and participate in the meeting.</p>
-              
-                <div class="portfolio-info">
-                  <div class="portfolio-description">
-                    <h2>Benefits and Convenience:</h2>
-                    <li>Simplified Access: By providing clickable class names, the web page eliminates the need for students to manually search or type in the Google Meet URL for each class. It streamlines the process and reduces the chance of errors or confusion.</li>
-                    <li>Time Efficiency: Students can quickly navigate to the web page, find their desired class, and join the Google Meet session with just a few clicks, saving time and minimizing disruptions.</li>
-                    <li> User-Friendly Experience: The web page's intuitive interface and clickable class names enhance the user experience, making it more convenient for students to access their online classes.</li>
-                    
-                  </div>   
-                  </div>
+            <div
+              style="margin-top: 2rem; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3 style="color: var(--text-main); margin-bottom: 1rem;">Tech Stack</h3>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span
+                  style="background: rgba(59, 130, 246, 0.2); color: #3b82f6; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">Google
+                  Meet</span>
+                <span
+                  style="background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">Gmail</span>
+                <span
+                  style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.85rem;">Classroom</span>
               </div>
-                <div class="portfolio-info">
-                  <div class="portfolio-description">
-                    <h2>Features</h2>
-                    <li>Google Meet</li>
-                    <li>Google class room.</li>
-                    <li> Gmail.</li>
-                    <li>Class Routine</li>
-                        
-                  </div>
-              </div>                     
             </div>
           </div>
 
         </div>
+      </section>
 
-      </div>
-    </section><!-- End Portfolio Details Section -->
+    </div>
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">
-      
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
         Designed by Hemanth
       </div>
     </div>
   </footer><!-- End  Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="icons/purecounter/purecounter_vanilla.js"></script>
@@ -195,6 +270,8 @@
 
   <!-- Template Main JS File -->
   <script src="jss/main.js"></script>
+  <!-- Interactive BG -->
+  <script src="jss/neural-bg.js"></script>
 
 </body>
 
