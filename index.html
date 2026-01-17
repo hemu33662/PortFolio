@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>iPortfolio of Hemanth - Index</title>
+  <title>Hemanth | Java Developer & Microservices Expert</title>
   <meta content="Portfolio of Nasaram Hemanth, a Java Developer specializing in Spring Boot and Microservices."
     name="description">
   <meta content="Java Developer, Spring Boot, Microservices, Portfolio, Nasaram Hemanth, Software Engineer"
@@ -19,6 +19,8 @@
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 
   <!-- Vendor CSS Files -->
   <link href="icons/aos/aos.css" rel="stylesheet">
@@ -31,13 +33,9 @@
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="css/style.css" rel="stylesheet">
+  <!-- Neon Glass Theme -->
+  <link href="css/portfolio.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Made on: june 21 2023
-  * Updated: January 15 2026
-  * Author: Nasaram Hemanth
-  ======================================================== -->
 </head>
 
 <body>
@@ -50,7 +48,7 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="img/profile-img.jpg" alt="" class="img-fluid">
+        <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-3">
         <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i
@@ -76,10 +74,12 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container" data-aos="fade-in">
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center"
+    style="position: relative; overflow: hidden;">
+    <canvas id="hero-canvas" style="position: absolute; top:0; left:0; width:100%; height:100%; z-index: 0;"></canvas>
+    <div class="hero-container" data-aos="fade-in" style="z-index: 1;">
       <h1>HEMANTH</h1>
-      <p>I'm <span class="typed" data-typed-items="Software Developer"></span></p>
+      <p>I'm <span class="typed" data-typed-items="Software Developer, Java Expert, Microservices Architect"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -93,49 +93,61 @@
           <h2>About</h2>
           <p>Hi there! Welcome to my profile. I'm excited to share a bit about myself with you. I completed my B.Tech
             degree at NIT Meghalaya.</p>
-
-          <p> I'm a Java developer with over a year of experience building scalable microservices using Spring Boot,
-            developing and enhancing API endpoints, and managing SQL databases. I always give my best to complete tasks
-            and understand the importance of time management. I am working to balance my persistence with efficiency.
-          </p>
-
-          <p> Eager to learn and grow in the technology field, I am looking for opportunities to leverage my technical
-            and problem-solving skills in a dynamic software development team. My technical skills, dedication, and
-            personal qualities will help me achieve my goals, and I am confident in my abilities to succeed. </p>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4" data-aos="fade-right">
-            <img src="img/profile-img.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3> Software Developer.</h3>
-            <div class="row">
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>20 August 2000</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+91 8639091778</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Kadapa, Andhra Pradesh</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span>25</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span>Bachelor of Technology</span>
-                  </li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span>hemanth.nitm@gmail.com</span>
-                  </li>
-                </ul>
-              </div>
+        <div class="glass-card">
+          <div class="row">
+            <div class="col-lg-4" data-aos="fade-right">
+              <img src="img/profile-img.jpg" class="img-fluid rounded" alt=""
+                style="box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
             </div>
-            <p>
-              Everyone has the potential to achieve their desires. While work may come with challenges, it’s important
-              to approach it without complaints or discomfort. People have different aspirations, especially in their
-              careers, and while some obstacles are unavoidable, the journey to finding what we truly seek is
-              captivating. It’s essential to recognize and appreciate the efforts individuals make, even when they face
-              difficulties along the way.
-            </p>
+            <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+              <h3> Software Developer.</h3>
+              <p class="fst-italic" style="color: var(--text-muted); margin-bottom: 2rem;">
+                Java developer with over a year of experience building scalable microservices using Spring Boot,
+                developing and enhancing API endpoints, and managing SQL databases.
+              </p>
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;"><i class="bi bi-chevron-right" style="color: var(--primary);"></i>
+                      <strong style="color: var(--text-main);">Birthday:</strong> <span
+                        style="color: var(--text-muted);">20 August 2000</span>
+                    </li>
+                    <li style="margin-bottom: 1rem;"><i class="bi bi-chevron-right" style="color: var(--primary);"></i>
+                      <strong style="color: var(--text-main);">Phone:</strong> <span
+                        style="color: var(--text-muted);">+91 8639091778</span>
+                    </li>
+                    <li style="margin-bottom: 1rem;"><i class="bi bi-chevron-right" style="color: var(--primary);"></i>
+                      <strong style="color: var(--text-main);">City:</strong> <span
+                        style="color: var(--text-muted);">Kadapa, Andhra Pradesh</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;"><i class="bi bi-chevron-right" style="color: var(--primary);"></i>
+                      <strong style="color: var(--text-main);">Age:</strong> <span
+                        style="color: var(--text-muted);">25</span>
+                    </li>
+                    <li style="margin-bottom: 1rem;"><i class="bi bi-chevron-right" style="color: var(--primary);"></i>
+                      <strong style="color: var(--text-main);">Degree:</strong> <span
+                        style="color: var(--text-muted);">Bachelor of Technology</span>
+                    </li>
+                    <li style="margin-bottom: 1rem;"><i class="bi bi-chevron-right" style="color: var(--primary);"></i>
+                      <strong style="color: var(--text-main);">Email:</strong> <span
+                        style="color: var(--text-muted);">hemanth.nitm@gmail.com</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <p style="margin-top: 1rem; color: var(--text-muted); line-height: 1.8;">
+                Everyone has the potential to achieve their desires. While work may come with challenges, it’s important
+                to approach it without complaints or discomfort. People have different aspirations, especially in their
+                careers, and while some obstacles are unavoidable, the journey to finding what we truly seek is
+                captivating.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -143,73 +155,79 @@
     </section><!-- End About Section -->
 
     <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills section-bg">
+    <section id="skills" class="skills section-bg" style="background: transparent;">
       <div class="container">
 
         <div class="section-title">
           <h2>Skills</h2>
         </div>
 
-        <div class="row skills-content">
+        <div class="glass-card">
+          <div class="row skills-content">
 
-          <div class="col-lg-6" data-aos="fade-up">
+            <div class="col-lg-6" data-aos="fade-up">
 
-            <div class="progress">
-              <span class="skill">Java <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress" style="background: rgba(255,255,255,0.1); height: 60px; border-radius: 0;">
+                <span class="skill" style="color: var(--text-main);">Java <i class="val">95%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"
+                    style="background: var(--primary);">
+                  </div>
                 </div>
               </div>
+
+              <div class="progress" style="background: rgba(255,255,255,0.1); height: 60px; border-radius: 0;">
+                <span class="skill" style="color: var(--text-main);">C++ <i class="val">95%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                    style="background: var(--secondary);">
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress" style="background: rgba(255,255,255,0.1); height: 60px; border-radius: 0;">
+                <span class="skill" style="color: var(--text-main);">PYTHON<i class="val">75%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
+                    style="background: var(--accent);">
+                  </div>
+                </div>
+              </div>
+
             </div>
 
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
-            <div class="progress">
-              <span class="skill">C++ <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress" style="background: rgba(255,255,255,0.1); height: 60px; border-radius: 0;">
+                <span class="skill" style="color: var(--text-main);">HTML <i class="val">100%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
+                    style="background: var(--primary);">
+                  </div>
                 </div>
               </div>
-            </div>
 
-
-            <div class="progress">
-              <span class="skill">PYTHON<i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress" style="background: rgba(255,255,255,0.1); height: 60px; border-radius: 0;">
+                <span class="skill" style="color: var(--text-main);">CSS <i class="val">90%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                    style="background: var(--secondary);">
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="progress">
-              <span class="skill">HTML <i class="val">100%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress" style="background: rgba(255,255,255,0.1); height: 60px; border-radius: 0;">
+                <span class="skill" style="color: var(--text-main);">JavaScript <i class="val">75%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
+                    style="background: var(--accent);">
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="progress">
-              <span class="skill">CSS <i class="val">90%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
-            </div>
-
-            <div class="progress">
-              <span class="skill">JavaScript <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                </div>
-              </div>
             </div>
 
           </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-          </div>
-
         </div>
 
       </div>
@@ -220,123 +238,107 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Resume <a href="NasaramHemanth_Resume.pdf"><button class="button"><i
+          <h2>Resume <a href="NasaramHemanth_Resume.pdf"><button class="button nav-btn"
+                style="border:0; width: 50px; height: 50px; display: inline-flex; align-items: center; justify-content: center; margin-left:1rem;"><i
                   class="fa fa-download"></i></button></a>
           </h2>
-          <p> Strong passion towards my goals, self-confidence, creative mind, deep learner.</p>
+          <p>Strong passion towards my goals, self-confidence, creative mind, deep learner.</p>
         </div>
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
-            <h3 class="resume-title">Summary</h3>
-            <div class="resume-item pb-0">
-              <h4>Nasaran Hemanth</h4>
-              <p><em>Java developer with over a year of experience building scalable microservices with Spring Boot,
-                  developing and
-                  enhancing API endpoints, and managing SQL databases. Looking for opportunities to leverage my
-                  technical and
-                  problem-solving skills in a dynamic software development team.</em></p>
-              <ul>
-                <li>Ananthapur, Andhra Pradesh</li>
-                <li>+91 8639091778</li>
-                <li>hemanth.nitm@gmail.com</li>
-              </ul>
+
+            <div class="glass-card mb-4">
+              <h3 class="resume-title" style="color: var(--primary);">Summary</h3>
+              <div class="resume-item pb-0">
+                <h4 style="color: var(--text-main);">Nasaram Hemanth</h4>
+                <p><em>Java developer with over a year of experience building scalable microservices with Spring Boot,
+                    developing and enhancing API endpoints, and managing SQL databases.</em></p>
+                <ul>
+                  <li>Ananthapur, Andhra Pradesh</li>
+                  <li>+91 8639091778</li>
+                  <li>hemanth.nitm@gmail.com</li>
+                </ul>
+              </div>
             </div>
 
-            <h3 class="resume-title">Education</h3>
-            <div class="resume-item">
-              <h4>Bachelor of Technology-Electronics and Communication Engineering</h4>
-              <h5>National Institute of Technology Meghalaya, Shillong</h5>
-              <p><em>2019 - 2023</em></p>
+            <div class="glass-card mb-4">
+              <h3 class="resume-title" style="color: var(--secondary);">Education</h3>
+              <div class="resume-item">
+                <h4 style="color: var(--text-main);">Bachelor of Technology</h4>
+                <h5 style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6;">2019 - 2023</h5>
+                <p><em>National Institute of Technology Meghalaya, Shillong</em></p>
+                <p>Electronics and Communication Engineering</p>
+              </div>
+              <div class="resume-item">
+                <h4 style="color: var(--text-main);">Senior Secondary Education</h4>
+                <h5 style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6;">2017 - 2019</h5>
+                <p><em>Chaitanya Boys Junior College, Vijayawada</em></p>
+              </div>
             </div>
-            <div class="resume-item">
-              <h4>Senior Secondary Education-MPC</h4>
-              <h5> Chaitanya Boys junior College Kanuru, Vijayawada</h5>
-              <p><em>2017 - 2019</em></p>
-            </div>
-            <div class="resume-item">
-              <h4>Secondary Examination-SSC</h4>
-              <h5>Z P High School Yadiki</h5>
-              <p><em>2016 - 2017</em></p>
-            </div>
+
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">INTERNSHIP</h3>
-            <div class="resume-item">
-              <h4>VLSI in Electronics Corporation of India Limited. </h4>
-              <h5>(06/2022 - 07/2022)</h5>
-              <p><em>Hyderabad, Telangana </em></p>
-              <ul>
-                <li>Worked as an intern in ECIL. </li>
-                <li>worked with other teammates to design the FIFO using Xilinx.</li>
-                <li>During my internship, I delivered a presentation where I simplified the First-In-First-Out (FIFO)
-                  concept and provided a thorough explanation of its code implementation and accompanying test bench.
-                </li>
-              </ul>
+
+            <div class="glass-card mb-4">
+              <h3 class="resume-title" style="color: var(--accent);">Experience</h3>
+              <div class="resume-item">
+                <h4 style="color: var(--text-main);">VLSI Intern</h4>
+                <h5 style="background: rgba(16, 185, 129, 0.2); color: #10b981;">06/2022 - 07/2022</h5>
+                <p><em>Electronics Corporation of India Limited, Hyderabad</em></p>
+                <ul>
+                  <li>Designed FIFO using Xilinx.</li>
+                  <li>Presented simplified FIFO concepts, code implementation, and test bench verification.</li>
+                </ul>
+              </div>
+
+              <div class="resume-item">
+                <h4 style="color: var(--text-main);">Machine Learning Intern</h4>
+                <h5 style="background: rgba(16, 185, 129, 0.2); color: #10b981;">01/2021 - 03/2021</h5>
+                <p><em>Verzeo</em></p>
+                <ul>
+                  <li>Utilized Python, Numpy, Matplotlib, and Scikit-Learn.</li>
+                  <li>Preprocessed data and built models for business challenges.</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="resume-item">
-              <h4>Machine Learning Intern at Verzeo </h4>
-              <h5>(01/2021 - 03/2021)</h5>
-              <!-- <p><em>Hyderabad, Telangana </em></p> -->
-              <ul>
-                <li>Enhanced analytical and problem-solving skills by learning algorithms for real-world
-                  problem-solving. </li>
-                <li>Utilized Python, Numpy, Matplotlib, and Scikit-Learn for data analysis and machine learning model
-                  development.</li>
-                <li> Preprocessed and cleaned data, building machine learning models to address various business
-                  challenges.</li>
-              </ul>
+            <div class="glass-card">
+              <h3 class="resume-title" style="color: var(--primary);">Achievements</h3>
+              <div class="resume-item">
+                <h4 style="color: var(--text-main);">Robodiction Winner (1st)</h4>
+                <p><em>Robotic Events - NIT Meghalaya 2k19</em></p>
+              </div>
+              <div class="resume-item">
+                <h4 style="color: var(--text-main);">HackMantra (3rd)</h4>
+                <p><em>Broadridge 2k22 - Built Food Supply Management Web App</em></p>
+              </div>
+              <div class="resume-item">
+                <h4 style="color: var(--text-main);">Technical Blog (1st)</h4>
+                <p><em>Cognitia 2k22 - Blog on Hash Code</em></p>
+              </div>
             </div>
 
           </div>
         </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-          <h3 class="resume-title">ACHIEVEMENTS</h3>
-          <div class="resume-item">
-            <h4> Robotic Events- Technical Fest of NIT Meghalaya 2k19 </h4>
-            <p><em> Built multi-wheeled mobile robots using Arduino UNO ATmega328P and Bluetooth Module HC-05, securing
-                1st place in the Robodiction event. </em></p>
-          </div>
-          <div class="resume-item">
-            <h4>Award For Best Drawing 2k21 </h4>
-            <p><em>Outstanding performance in the drawing competition on "water conservation" for swachhata pakhwada,
-                2020.</em></p>
-          </div>
-
-
-          <div class="resume-item">
-            <h4>Technical Blog Writing- Technical Fest of NIT Meghalaya 2k22</h4>
-            <p><em>Secured 1st place in COG-BLOG, wrote a blog related to technical topics in hash code during our
-                technical fest Cognitia.</em></p>
-          </div>
-          <div class="resume-item">
-            <h4> HackMantra by Broadridge 2k22 </h4>
-            <p><em>Secured 3rd place in Hackmantra by developing a website using Java and Spring Boot for remote area
-                food supply
-                management during our technical fest Cognitia. </em></p>
-          </div>
-        </div>
-      </div>
 
       </div>
     </section><!-- End Resume Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+    <section id="portfolio" class="portfolio section-bg" style="background: transparent;">
       <div class="container">
 
         <div class="section-title">
           <h2>Portfolio</h2>
           <p>When we aim for big goals, we often face tough challenges. These challenges show us what we truly need and
-            want, pushing us to keep going even when it’s hard. No matter if the path is easy or full of obstacles, it
-            has a strong appeal that draws everyone in.
-          </p>
+            want, pushing us to keep going even when it’s hard.</p>
         </div>
 
         <div class="row" data-aos="fade-up">
           <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
+            <ul id="portfolio-flters"
+              style="background: rgba(255,255,255,0.05); border-radius: 50px; padding: 5px 10px;">
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-app">VLSI</li>
               <li data-filter=".filter-card">ML</li>
@@ -348,105 +350,91 @@
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/floatingpoint/portfolio-1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://github.com/hemu33662/Power_Efficiant_FloatingPoint_Adder" title="More Details"><i
-                    class="bx bx-link">Full Details</i></a>
-                <a href="Floating.html" title="More Details"><i class="bx bx-link">Floating Point Adder</i></a>
+            <div class="glass-card p-0" style="overflow: hidden;">
+              <div class="portfolio-wrap">
+                <img src="img/floatingpoint/portfolio-1.jpg" class="img-fluid" alt="">
+                <div class="portfolio-links">
+                  <a href="https://github.com/hemu33662/Power_Efficiant_FloatingPoint_Adder" title="Source Code"><i
+                      class="bx bxl-github"></i></a>
+                  <a href="Floating.html" title="View Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+              <div class="text-center p-3">
+                <h4 style="color: var(--text-main); margin-bottom: 0;">Floating Point Adder</h4>
+                <span style="color: var(--primary); font-size: 0.9rem;">VLSI Design</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/ClickToJoin/portfolio-5.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://github.com/hemu33662/Click_To_Join" title="More Details"><i class="bx bx-link">Full
-                    Details</i></a>
-                <a href="Routien.html" title="More Details"><i class="bx bx-link">Click To Join</i></a>
+            <div class="glass-card p-0" style="overflow: hidden;">
+              <div class="portfolio-wrap">
+                <img src="img/ClickToJoin/portfolio-5.jpg" class="img-fluid" alt="">
+                <div class="portfolio-links">
+                  <a href="https://github.com/hemu33662/Click_To_Join" title="Source Code"><i
+                      class="bx bxl-github"></i></a>
+                  <a href="Routien.html" title="View Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+              <div class="text-center p-3">
+                <h4 style="color: var(--text-main); margin-bottom: 0;">Click To Join</h4>
+                <span style="color: var(--secondary); font-size: 0.9rem;">Web Application</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="img/alu/portfolio-3.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://github.com/hemu33662/ALU_8_BIT" title="More Details"><i class="bx bx-link">Full
-                    Details</i></a>
-                <a href="ALU.html" title="More Details"><i class="bx bx-link">ALU Design</i></a>
+            <div class="glass-card p-0" style="overflow: hidden;">
+              <div class="portfolio-wrap">
+                <img src="img/alu/portfolio-3.jpg" class="img-fluid" alt="">
+                <div class="portfolio-links">
+                  <a href="https://github.com/hemu33662/ALU_8_BIT" title="More Details"><i
+                      class="bx bxl-github"></i></a>
+                  <a href="ALU.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+              <div class="text-center p-3">
+                <h4 style="color: var(--text-main); margin-bottom: 0;">ALU Design</h4>
+                <span style="color: var(--primary); font-size: 0.9rem;">VLSI Design</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="img/SentimentalAnalysis/portfolio-4.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://github.com/hemu33662/Sentimental_Analysis" title="More Details"><i
-                    class="bx bx-link">Full Details</i></a>
-                <a href="Sentimental.html" title="More Details"><i class="bx bx-link">Sentimental Analysis</i></a>
+            <div class="glass-card p-0" style="overflow: hidden;">
+              <div class="portfolio-wrap">
+                <img src="img/SentimentalAnalysis/portfolio-4.jpg" class="img-fluid" alt="">
+                <div class="portfolio-links">
+                  <a href="https://github.com/hemu33662/Sentimental_Analysis" title="More Details"><i
+                      class="bx bxl-github"></i></a>
+                  <a href="Sentimental.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+              <div class="text-center p-3">
+                <h4 style="color: var(--text-main); margin-bottom: 0;">Sentimental Analysis</h4>
+                <span style="color: var(--accent); font-size: 0.9rem;">Machine Learning</span>
               </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="img/HackMantra/portfolio-2.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="https://github.com/hemu33662/Click_To_Join" title="More Details"><i class="bx bx-link">Full
-                    Details</i></a>
-                <a href="hackmantra.html" title="More Details"><i class="bx bx-link">Hack Mantra</i></a>
+            <div class="glass-card p-0" style="overflow: hidden;">
+              <div class="portfolio-wrap">
+                <img src="img/HackMantra/portfolio-2.jpg" class="img-fluid" alt="">
+                <div class="portfolio-links">
+                  <a href="https://github.com/hemu33662/Click_To_Join" title="More Details"><i
+                      class="bx bxl-github"></i></a>
+                  <a href="hackmantra.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+              <div class="text-center p-3">
+                <h4 style="color: var(--text-main); margin-bottom: 0;">Hack Mantra</h4>
+                <span style="color: var(--secondary); font-size: 0.9rem;">Web Design</span>
               </div>
             </div>
           </div>
 
-          <!--
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          -->
         </div>
-
-      </div>
 
       </div>
     </section><!-- End Portfolio Section -->
@@ -457,87 +445,81 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>"Contact is the bridge that connects individuals, ideas, and opportunities. It is through sharing our
-            information that we open doors to collaboration, understanding, and growth. Let your contact details be the
-            catalyst for meaningful connections and endless possibilities."</p>
+          <p>"Contact is the bridge that connects individuals, ideas, and opportunities. Let your contact details be the
+            catalyst for meaningful connections."</p>
         </div>
 
         <div class="row" data-aos="fade-in">
 
           <div class="col-lg-5 d-flex align-items-stretch">
-            <div class="info">
+            <div class="glass-card w-100 info">
               <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Kadapa</p>
+                <i class="bi bi-geo-alt" style="background: rgba(59, 130, 246, 0.2); color: #3b82f6;"></i>
+                <h4 style="color: var(--text-main);">Location:</h4>
+                <p style="color: var(--text-muted);">Kadapa, Andhra Pradesh</p>
               </div>
 
               <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>hemanth.nitm@gmail.com</p>
+                <i class="bi bi-envelope" style="background: rgba(16, 185, 129, 0.2); color: #10b981;"></i>
+                <h4 style="color: var(--text-main);">Email:</h4>
+                <p style="color: var(--text-muted);">hemanth.nitm@gmail.com</p>
               </div>
 
               <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>+91 8639091778</p>
+                <i class="bi bi-phone" style="background: rgba(139, 92, 246, 0.2); color: #8b5cf6;"></i>
+                <h4 style="color: var(--text-main);">Call:</h4>
+                <p style="color: var(--text-muted);">+91 8639091778</p>
               </div>
 
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15456.283694425894!2d78.21667284813029!3d14.423074976677933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb3ebb7c5835cd9%3A0x3a4854affffebccd!2sPulivendula%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1695454559943!5m2!1sen!2sin"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+                frameborder="0"
+                style="border:0; width: 100%; height: 290px; border-radius: 12px; margin-top: 20px; filter: grayscale(1) invert(1);"
+                allowfullscreen></iframe>
             </div>
 
           </div>
 
-
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form glass-card w-100"
+              id="feedback-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name" style="color: var(--text-main); margin-bottom: 0.5rem;">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                  <!-- <div class="validate"></div> -->
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name" style="color: var(--text-main); margin-bottom: 0.5rem;">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name" style="color: var(--text-main); margin-bottom: 0.5rem;">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name" style="color: var(--text-main); margin-bottom: 0.5rem;">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
 
         </div>
 
-        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form" id="feedback-form">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <label for="name">Your Name</label>
-                <input type="text" name="name" class="form-control" id="name" required>
-              </div>
-              <div class="form-group col-md-6">
-                <label for="name">Your Email</label>
-                <input type="email" class="form-control" name="email" id="email" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="name">Subject</label>
-              <input type="text" class="form-control" name="subject" id="subject" required>
-            </div>
-            <div class="form-group">
-              <label for="name">Message</label>
-              <textarea class="form-control" name="message" rows="10" required></textarea>
-            </div>
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
       </div>
+    </section><!-- End Contact Section -->
 
-      </div>
-    </section>
-
-    <!-- End Contact Section -->
-
-  </main>
-  <!-- End #main -->
+  </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
-
     <div class="credits">
       Designed by HEMANTH
     </div>
@@ -559,6 +541,8 @@
 
   <!-- Template Main JS File -->
   <script src="jss/main.js"></script>
+  <!-- Interactive BG -->
+  <script src="jss/main-bg.js"></script>
 
 </body>
 
