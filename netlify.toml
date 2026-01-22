@@ -1,0 +1,8 @@
+[build]
+  command = "echo 'No build needed'"
+  publish = "."
+  functions = "netlify/functions"
+
+[dev]
+  framework = "#static"
+  targetPort = 3000

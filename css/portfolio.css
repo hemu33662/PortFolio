@@ -491,6 +491,98 @@ img {
     border-color: var(--card-border);
 }
 
+.php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid var(--accent);
+    border-top-color: transparent;
+    animation: animate-loading 1s linear infinite;
+}
+
+@keyframes animate-loading {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Custom Morphing Button Animation */
+.php-email-form button[type="submit"] {
+    position: relative;
+    height: 54px;
+    /* Fixed height for animation stability */
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.php-email-form button[type="submit"].animating {
+    animation: extend 1s ease-in-out forwards;
+    cursor: default;
+    pointer-events: none;
+    color: transparent !important;
+    /* Force text hide */
+}
+
+/* Loader Icon inside Button */
+.php-email-form button[type="submit"].animating::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+    width: 24px;
+    height: 24px;
+    border: 3px solid #fff;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    opacity: 1 !important;
+    /* Force show */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes extend {
+    0% {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 50px;
+    }
+
+    10% {
+        width: 310px;
+        background: #fff;
+    }
+
+    20% {
+        width: 300px;
+        background: var(--primary);
+    }
+
+    100% {
+        width: 54px;
+        max-width: 54px;
+        border-radius: 50%;
+        background: var(--accent);
+    }
+}
+
 /* Sidebar Styling Overrides */
 #header {
     background: rgba(15, 23, 42, 0.95) !important;

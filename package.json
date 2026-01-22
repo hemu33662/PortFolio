@@ -1,0 +1,15 @@
+{
+    "name": "portfolio",
+    "version": "1.0.0",
+    "description": "Personal Portfolio with Serverless Email Function",
+    "scripts": {
+        "start": "netlify dev",
+        "build": "echo 'No build command needed for static site'"
+    },
+    "dependencies": {
+        "nodemailer": "^6.9.0"
+    },
+    "devDependencies": {
+        "netlify-cli": "^17.0.0"
+    }
+}

@@ -1,38 +1,64 @@
-document.getElementById('feedback-form').addEventListener('submit', function (event) {
+document.getElementById('feedback-form').addEventListener('submit', async function (event) {
   event.preventDefault();
 
   var form = this;
   var formData = new FormData(form);
 
-  var xhr = new XMLHttpRequest();
-  xhr.open(form.method, form.action, true);
-  xhr.setRequestHeader('Accept', 'application/json');
+  // URL points to Netlify Function
+  const API_URL = "/.netlify/functions/send-mail";
 
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText);
-        if (response.success) {
-          document.querySelector('.sent-message').style.display = 'block';
-          document.querySelector('.error-message').style.display = 'none';
-          document.querySelector('.loading').style.display = 'none';
-          form.reset();
-        } else {
-          document.querySelector('.error-message').innerHTML = response.message;
-          document.querySelector('.error-message').style.display = 'block';
-          document.querySelector('.loading').style.display = 'none';
-        }
-      } else {
-        document.querySelector('.error-message').innerHTML = 'Oops! There was a problem submitting your form';
-        document.querySelector('.error-message').style.display = 'block';
-        document.querySelector('.loading').style.display = 'none';
-      }
+  // UI Elements
+  const button = form.querySelector('button[type="submit"]');
+  const errorMsg = document.querySelector('.error-message');
+  const sentMsg = document.querySelector('.sent-message');
+
+  // Start Animation
+  button.classList.add('animating');
+  errorMsg.style.display = 'none';
+  sentMsg.style.display = 'none';
+
+  try {
+    // Convert FormData to JSON for Node.js
+    const object = {};
+    formData.forEach((value, key) => object[key] = value);
+    const json = JSON.stringify(object);
+
+    // Send data to Netlify Function
+    const response = await fetch(API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: json
+    });
+
+    // Check for Netlify errors (e.g. 500 or 502)
+    if (!response.ok) {
+      // Try to get error text if json parsing fails
+      const text = await response.text();
+      let message = 'Server Error';
+      try {
+        const result = JSON.parse(text);
+        message = result.message || message;
+      } catch (e) { message = text || response.statusText; }
+      throw new Error(message);
     }
-  };
 
-  document.querySelector('.loading').style.display = 'block';
-  document.querySelector('.error-message').style.display = 'none';
-  document.querySelector('.sent-message').style.display = 'none';
+    const result = await response.json();
 
-  xhr.send(formData);
+    if (response.ok && result.status === 'success') {
+      sentMsg.style.display = 'block';
+      form.reset();
+    } else {
+      throw new Error(result.message || 'Form submission failed');
+    }
+
+  } catch (error) {
+    console.error(error);
+    errorMsg.innerHTML = error.message || 'An error occurred. Please try again.';
+    errorMsg.style.display = 'block';
+  } finally {
+    // Stop Animation
+    button.classList.remove('animating');
+  }
 });
