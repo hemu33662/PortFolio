@@ -1,17 +1,13 @@
 const nodemailer = require('nodemailer');
 
-exports.handler = async function (event, context) {
+exports.handler = async function (event) {
     // Only allow POST
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Method Not Allowed" };
     }
 
     try {
-        // Parse the body (either JSON or URL-encoded/FormData from fetch)
-        // Note: fetch() with FormData sends multipart, but Netlify Functions 
-        // handle body parsing best if we send JSON or parsed fields.
-        // For simplicity with validate.js, we will parse the JSON body.
-
+        // Parse the body
         const data = JSON.parse(event.body);
         const { name, email, subject, message } = data;
 
@@ -23,12 +19,12 @@ exports.handler = async function (event, context) {
             };
         }
 
-        // Configure Nodemailer (Gmail SMTP)
-        // These vars must be set in Netlify Environment Variables
+        // Configure Nodemailer (Dynamic SMTP)
+        // Defaults to Gmail if not specified, but allows overrides
         const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 587,
-            secure: false, // true for 465, false for other ports
+            host: process.env.SMTP_HOST || "smtp.gmail.com",
+            port: process.env.SMTP_PORT || 587,
+            secure: process.env.SMTP_SECURE === "true", // true for 465, false for 587
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
@@ -37,8 +33,8 @@ exports.handler = async function (event, context) {
 
         // Send Email
         await transporter.sendMail({
-            from: process.env.EMAIL_USER, // Sender address
-            to: "hemanth.nitm@gmail.com", // Destination (Your Email)
+            from: process.env.EMAIL_USER,
+            to: "hemanth.nitm@gmail.com", // Destination
             replyTo: email,
             subject: 'Portfolio Message: ' + (subject || 'No Subject'),
             html: `
@@ -55,10 +51,14 @@ exports.handler = async function (event, context) {
         };
 
     } catch (error) {
-        console.error("Mail Error:", error);
+        console.error("Mail Error:", error); // Logs to Netlify Function logs
         return {
             statusCode: 500,
-            body: JSON.stringify({ status: 'error', message: 'Failed to send email' })
+            body: JSON.stringify({
+                status: 'error',
+                message: 'Failed to send email. Check function logs for details.',
+                error: process.env.NODE_ENV === 'development' ? error.message : undefined
+            })
         };
     }
 };
