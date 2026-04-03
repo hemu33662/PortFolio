@@ -36,11 +36,25 @@ img {
 }
 
 /* Specific sizing for slider and card images to keep them uniform */
-.portfolio-details-slider .swiper-slide img,
-.glass-card img {
+.portfolio-details-slider .swiper-slide img {
     max-height: 500px;
     width: auto;
     object-fit: contain;
+}
+
+/* Portfolio Grid Image Consistency */
+.portfolio-item .portfolio-wrap img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+}
+
+/* Ensure project info containers are consistent height */
+.portfolio-item .text-center {
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Utility */
@@ -51,6 +65,13 @@ img {
     border-radius: 24px;
     padding: 2rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Portfolio specific card alignment */
+.portfolio-item .glass-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .glass-card:hover {

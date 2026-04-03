@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Secure Mail Service | Project </title>
+  <meta content="Robust, Enterprise-Grade Backend for Secure and Authenticated Email Delivery." name="description">
+  <meta content="Java, Spring Boot, HMAC, Security, SMTP, Jakarta Mail, Maven, Microservices" name="keywords">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="icons/aos/aos.css" rel="stylesheet">
+  <link href="icons/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="icons/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="icons/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="icons/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="icons/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/portfolio.css" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    .terminal-window {
+      background: #11111b;
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+      margin-top: 2rem;
+      position: relative;
+    }
+
+    .terminal-header {
+      background: rgba(255,255,255,0.05);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #febc2e; }
+    .dot-green { background: #28c840; }
+    .terminal-title { margin-left: auto; color: var(--text-muted); font-size: 0.75rem; font-family: monospace; }
+
+    .terminal-body {
+      padding: 25px;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      overflow-x: auto;
+    }
+
+    .c-comment { color: #6c7086; }
+    .c-cmd { color: #89b4fa; font-weight: bold; }
+    .c-opt { color: #fab387; }
+    .c-hdr { color: #a6e3a1; }
+    .c-val { color: #f9e2af; }
+    .c-string { color: #f38ba8; }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="img/profile-img.jpg" alt="" class="img-fluid rounded-3">
+        <h1 class="text-light"><a href="index.html">Nasaram Hemanth</a></h1>
+        <div class="social-links mt-3 text-center">
+          <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i
+              class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
+          <a href="mailto:hemanth.nitm@gmail.com" class="gmail"><i class="bx bxl-gmail"></i></a>
+          <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
+        </div>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
+          </li>
+          <li><a href="#hero" class="nav-link scrollto"><i class="bx bx-bolt-circle"></i> <span>Overview</span></a></li>
+          <li><a href="#security" class="nav-link scrollto"><i class="bx bx-shield-quarter"></i>
+              <span>Security</span></a></li>
+          <li><a href="#tech" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Tech Stack</span></a></li>
+          <li><a href="#github" class="nav-link scrollto"><i class="bx bxl-github"></i> <span>GitHub</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <div class="container project-container">
+
+      <!-- Custom Top Bar inside Content -->
+      <div class="top-bar" style="gap: 1rem;" data-aos="fade-down">
+        <a href="index.html" class="nav-btn"
+          style="background: transparent; border-color: var(--text-muted); color: var(--text-muted);">Home</a>
+        <a href="https://github.com/hemu33662" target="_blank" class="nav-btn">GitHub Profile</a>
+      </div>
+
+      <!-- Hero -->
+      <section class="hero-section">
+        <canvas id="hero-canvas"></canvas>
+        <h1 data-aos="fade-up">Secure Mail Service <br><span>Enterprise SMTP Gateway</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100">A robust multi-tenant backend solution designed for secure and
+          authenticated email delivery. Implementing HMAC-SHA256 integrity and replay attack prevention.</p>
+
+        <div class="stats-grid">
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="200">
+            <h3><span data-purecounter-start="0" data-purecounter-end="256" data-purecounter-duration="1"
+                class="purecounter">0</span>-bit</h3>
+            <p>HMAC Security</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="300">
+            <h3><span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
+                class="purecounter">0</span>+</h3>
+            <p>SaaS Support</p>
+          </div>
+          <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="400">
+            <h3>
+              < <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1"
+                class="purecounter">0</span>ms
+            </h3>
+            <p>Auth Latency</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="architecture-section">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Project Overview</h2>
+          <p style="color: var(--text-muted);">A centralized gateway for enterprise-grade email management.</p>
+        </div>
+
+        <div class="row" style="margin-top: 3rem;">
+          <div class="col-lg-6" data-aos="fade-right">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem;">The Challenge</h3>
+            <p style="color: var(--text-muted); line-height: 1.8;">
+              Managing SMTP configurations across multiple applications is repetitive and insecure. Direct exposure of
+              SMTP credentials in client-side or distributed microservices increases the risk of data breaches.
+              <br><br>
+              <strong>Secure Mail Service</strong> solves this by acting as a single, hardened entry point for all
+              organizational mail requests, abstracting configuration complexity while enforcing strict security
+              protocols.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="glass-card">
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 1rem;"><i class="bi bi-check2-circle"
+                    style="color: var(--accent); margin-right: 10px;"></i> Multi-Tenant Client Registry</li>
+                <li style="margin-bottom: 1rem;"><i class="bi bi-check2-circle"
+                    style="color: var(--accent); margin-right: 10px;"></i> HMAC Signature Verification</li>
+                <li style="margin-bottom: 1rem;"><i class="bi bi-check2-circle"
+                    style="color: var(--accent); margin-right: 10px;"></i> Replay Attack Mitigation</li>
+                <li style="margin-bottom: 1rem;"><i class="bi bi-check2-circle"
+                    style="color: var(--accent); margin-right: 10px;"></i> Multipart Attachment Support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security Section -->
+      <section id="security" class="project-details-section" style="margin-top: 6rem;">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Security Architecture</h2>
+          <p style="color: var(--text-muted);">Implementing Zero-Trust Authentication via HMAC-SHA256.</p>
+        </div>
+
+        <div class="row align-items-center mb-5" data-aos="fade-up">
+          <div class="col-lg-12">
+            <div class="terminal-window">
+              <div class="terminal-header">
+                <div class="terminal-dot dot-red"></div>
+                <div class="terminal-dot dot-yellow"></div>
+                <div class="terminal-dot dot-green"></div>
+                <div class="terminal-title">bash - interaction.sh</div>
+              </div>
+              <div class="terminal-body">
+                <div class="c-comment"># Authenticated Request Example</div>
+                <div>
+                  <span class="c-cmd">curl</span> <span class="c-opt">-X</span> POST http://localhost:8080/api/v1/mail \
+                </div>
+                <div style="padding-left: 20px;">
+                  <span class="c-opt">-H</span> <span class="c-hdr">"X-API-KEY: YOUR_KEY"</span> \<br>
+                  <span class="c-opt">-H</span> <span class="c-hdr">"X-USER-ID: dev_test"</span> \<br>
+                  <span class="c-opt">-H</span> <span class="c-hdr">"X-SIGNATURE: BASE64_HMAC(...)"</span> \<br>
+                  <span class="c-opt">-H</span> <span class="c-hdr">"X-TIMESTAMP: 1712056000"</span> \<br>
+                  <span class="c-opt">-F</span> <span class="c-val">"to=recipient@example.com"</span> \<br>
+                  <span class="c-opt">-F</span> <span class="c-val">"subject=Safety Report"</span> \<br>
+                  <span class="c-opt">-F</span> <span class="c-val">"body=&lt;h1&gt;System Alert&lt;/h1&gt;"</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="row g-4">
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="architecture-step">
+              <div style="font-size: 2.5rem; color: var(--primary); margin-bottom: 1rem;"><i
+                  class="bi bi-shield-lock"></i></div>
+              <h5>HMAC Signing</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Requests are signed client-side using a secret key
+                that is never transmitted over the network.</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="architecture-step">
+              <div style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 1rem;"><i
+                  class="bi bi-clock-history"></i></div>
+              <h5>Timestamp Validation</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Strict 5-minute window validation prevents
+                malicious actors from capturing and replaying requests.</p>
+            </div>
+          </div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="architecture-step">
+              <div style="font-size: 2.5rem; color: var(--accent); margin-bottom: 1rem;"><i class="bi bi-people"></i>
+              </div>
+              <h5>Multi-Tenant Isolation</h5>
+              <p style="font-size: 0.9rem; color: var(--text-muted);">Each client has localized authorization,
+                preventing sender spoofing and cross-tenant access.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack -->
+      <section id="tech" class="project-details-section" style="margin-bottom: 6rem; margin-top: 6rem;"
+        data-aos="fade-up">
+        <div class="section-header">
+          <h2>Technical Foundation</h2>
+          <p style="color: var(--text-muted);">Built with modern Java technologies and enterprise patterns.</p>
+        </div>
+
+        <div class="glass-card" style="display: flex; flex-wrap: wrap; gap: 3rem;">
+
+          <!-- Main Content -->
+          <div style="flex: 2; min-width: 300px;">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem;">Core Implementation</h3>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
+              The service is built on <strong>Spring Boot 3.x</strong>, leveraging the power of <strong>Jakarta
+                Mail</strong> for robust SMTP interfacing. The heart of the security system is a custom
+              <code>ApiKeyAuthFilter</code> which performs real-time HMAC validation before requests reach the
+              controller.
+            </p>
+
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Custom Authentication
+                  Filter</strong>
+                <span style="color: var(--text-muted);">A filter-based security implementation that regenerates HMAC
+                  signatures server-side to verify request integrity.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">JSON Registry
+                  System</strong>
+                <span style="color: var(--text-muted);">A dynamic <code>clients.json</code> registry allowing for
+                  hot-swapping client credentials and authorized sender lists.</span>
+              </li>
+              <li style="margin-bottom: 1.5rem;">
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">Structured Audit
+                  Logging</strong>
+                <span style="color: var(--text-muted);">Using Logback and SLF4J, every request is tracked via a
+                  <code>traceId</code> for enterprise auditability and debugging.</span>
+              </li>
+            </ul>
+
+          </div>
+
+          <!-- Sidebar Info -->
+          <div style="flex: 1; min-width: 250px;">
+            <div
+              style="background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3
+                style="color: var(--text-main); margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">
+                Project Info</h3>
+              <ul style="list-style: none; padding: 0; color: var(--text-muted); line-height: 2;">
+                <li><strong style="color: var(--text-main);">Category:</strong> Backend / Security</li>
+                <li><strong style="color: var(--text-main);">Level:</strong> Enterprise Ready</li>
+                <li><strong style="color: var(--text-main);">GitHub:</strong> Coming Soon</li>
+              </ul>
+            </div>
+            <div
+              style="margin-top: 2rem; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3 style="color: var(--text-main); margin-bottom: 1rem;">Tech Stack</h3>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span
+                  style="background: rgba(59,130,246,0.1); color: var(--primary); padding: 2px 10px; border-radius: 5px; font-size: 0.8rem;">Spring
+                  Boot</span>
+                <span
+                  style="background: rgba(16,185,129,0.1); color: var(--accent); padding: 2px 10px; border-radius: 5px; font-size: 0.8rem;">Jakarta
+                  Mail</span>
+                <span
+                  style="background: rgba(139,92,246,0.1); color: var(--secondary); padding: 2px 10px; border-radius: 5px; font-size: 0.8rem;">Security</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="credits">
+        Designed by Hemanth
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="icons/purecounter/purecounter_vanilla.js"></script>
+  <script src="icons/aos/aos.js"></script>
+  <script src="icons/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="icons/glightbox/js/glightbox.min.js"></script>
+  <script src="icons/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="icons/swiper/swiper-bundle.min.js"></script>
+  <script src="icons/typed.js/typed.umd.js"></script>
+  <script src="icons/waypoints/noframework.waypoints.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="jss/main.js"></script>
+  <!-- Interactive BG -->
+  <script src="jss/mail-bg.js"></script>
+
+</body>
+
+</html>
