@@ -5,9 +5,10 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Sentimental Analysis | Project Showcase</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <title>Sentimate Analysis | Project </title>
+  <meta content="Decoding Human Emotions with Deep Learning & Precision. 99.50% Accuracy with RoBERTa."
+    name="description">
+  <meta content="Sentiment Analysis, RoBERTa, Deep Learning, NLP, Python, Django" name="keywords">
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -30,9 +31,36 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
-
   <link href="css/portfolio.css" rel="stylesheet">
 
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    .model-card {
+      width: 220px !important;
+      height: 320px !important;
+      margin-left: -80px !important;
+    }
+
+    .model-card:nth-child(5) {
+      transform: rotate(10deg) translateY(30px);
+      z-index: 5;
+    }
+
+    .models-grid .model-card:nth-child(5):hover {
+      transform: scale(1.1) translateY(-30px) !important;
+    }
+
+    @media (max-width: 991px) {
+      .model-card {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 250px;
+        margin-left: 0 !important;
+      }
+    }
+  </style>
 
 </head>
 
@@ -52,8 +80,7 @@
           <a href="https://www.linkedin.com/in/nasaram-hemanth-07b668236/" class="linkedin"><i
               class="bx bxl-linkedin"></i></a>
           <a href="https://github.com/hemu33662" class="github"><i class="bx bxl-github"></i></a>
-          <a href="mailto:hemanth.nitm@gmail.com?subject=Subject%20of%20the%20Email&body=Body%20of%20the%20Email"
-            class="gmail"><i class="bx bxl-gmail"></i></a>
+          <a href="mailto:hemanth.nitm@gmail.com" class="gmail"><i class="bx bxl-gmail"></i></a>
           <a href="https://www.facebook.com/hemanth.hemanth.106902" class="facebook"><i class="bx bxl-facebook"></i></a>
         </div>
       </div>
@@ -62,11 +89,11 @@
         <ul>
           <li><a href="index.html" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a>
           </li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i>
-              <span>Portfolio</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="#hero" class="nav-link scrollto"><i class="bx bx-bolt-circle"></i> <span>Overview</span></a></li>
+          <li><a href="#stats" class="nav-link scrollto"><i class="bx bx-stats"></i> <span>Benchmarks</span></a></li>
+          <li><a href="https://sentimental-analysis-whv6.onrender.com" target="_blank" class="nav-link"><i
+                class="bx bx-play-circle"></i> <span>Live App</span></a></li>
+          <li><a href="#tech" class="nav-link scrollto"><i class="bx bx-code-alt"></i> <span>Tech Stack</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -80,7 +107,7 @@
       <div class="top-bar" style="gap: 1rem;" data-aos="fade-down">
         <a href="index.html" class="nav-btn"
           style="background: transparent; border-color: var(--text-muted); color: var(--text-muted);">Home</a>
-        <a href="#" class="nav-btn">Try App Live</a>
+        <a href="https://sentimental-analysis-whv6.onrender.com" target="_blank" class="nav-btn">Try App Live</a>
       </div>
 
       <!-- Hero -->
@@ -93,18 +120,18 @@
 
         <div class="stats-grid">
           <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="200">
-            <h3><span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1"
+            <h3><span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1"
                 class="purecounter">0</span></h3>
             <p>ML Models</p>
           </div>
           <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="300">
-            <h3><span data-purecounter-start="0" data-purecounter-end="81" data-purecounter-duration="1"
-                class="purecounter">0</span>%</h3>
+            <h3><span data-purecounter-start="0" data-purecounter-end="99" data-purecounter-duration="1"
+                class="purecounter">0</span>.5%</h3>
             <p>Peak Accuracy</p>
           </div>
           <div class="glass-card stat-item" data-aos="zoom-in" data-aos-delay="400">
             <h3>
-              < <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1"
+              < <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1"
                 class="purecounter">0</span>ms
             </h3>
             <p>Inference Time</p>
@@ -116,89 +143,85 @@
       <section class="architecture-section">
         <div class="section-header" data-aos="fade-up">
           <h2>System Architecture</h2>
-          <p style="color: var(--text-muted);">From keystroke to insight</p>
+          <p style="color: var(--text-muted);">From raw dataset to real-time classification</p>
         </div>
 
         <div class="flow-diagram">
-          <!-- Lines connecting would be better with SVG, using Flex gap for simplicity -->
-
           <div class="flow-step" data-aos="fade-right" data-aos-delay="100">
             <div class="step-icon">👤</div>
-            <span>User Input</span>
+            <span>Dataset (1k+)</span>
           </div>
           <div class="arrow" data-aos="fade-right" data-aos-delay="150">➜</div>
 
           <div class="flow-step" data-aos="fade-right" data-aos-delay="200">
-            <div class="step-icon">🔌</div>
-            <span>Django API</span>
+            <div class="step-icon">🚿</div>
+            <span>Tokenization</span>
           </div>
           <div class="arrow" data-aos="fade-right" data-aos-delay="250">➜</div>
 
           <div class="flow-step" data-aos="fade-right" data-aos-delay="300">
-            <div class="step-icon">🧹</div>
-            <span>Text Cleaning</span>
+            <div class="step-icon">🤖</div>
+            <span>RoBERTa Hub</span>
           </div>
           <div class="arrow" data-aos="fade-right" data-aos-delay="350">➜</div>
 
           <div class="flow-step" data-aos="fade-right" data-aos-delay="400">
-            <div class="step-icon">🧮</div>
-            <span>Vectorization</span>
-          </div>
-          <div class="arrow" data-aos="fade-right" data-aos-delay="450">➜</div>
-
-          <div class="flow-step" data-aos="fade-right" data-aos-delay="500">
-            <div class="step-icon">🤖</div>
-            <span>Prediction</span>
+            <div class="step-icon">⚡</div>
+            <span>Django API</span>
           </div>
         </div>
       </section>
 
       <!-- Benchmarks -->
-      <section>
+      <section id="stats">
         <div class="section-header" data-aos="fade-up">
-          <h2>Model Benchmarks</h2>
-          <p style="color: var(--text-muted);">Comparing 4 different architectural approaches</p>
+          <h2>Model Evolution</h2>
+          <p style="color: var(--text-muted);">Comparing 5 distinct architectural approaches</p>
         </div>
 
-        <div class="models-grid">
-          <!-- Model 1 (Winner) -->
+        <div class="row align-items-center mb-5">
+
+
+        </div>
+
+        <div class="models-grid" style="margin-top: 4rem;">
+          <!-- Model 1 (RoBERTa) -->
           <div class="glass-card model-card winner" data-aos="fade-up" data-aos-delay="100">
-            <h4>Multinomial Naïve Bayes</h4>
-            <span style="color: var(--accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Top
-              Performer</span>
-            <div class="accuracy-badge"><span class="card-counter" data-target="81.0">81.0</span>%</div>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Uses CountVectorizer. Best suited for
-              discrete features like word counts.</p>
+            <h4>RoBERTa (Custom)</h4>
+            <span style="color: var(--accent); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">SOTA
+              Model</span>
+            <div class="accuracy-badge"><span class="card-counter" data-target="99.5">99.5</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">Transformer fine-tuning. Peak performance on
+              ambiguous text.</p>
           </div>
 
           <!-- Model 2 -->
           <div class="glass-card model-card" data-aos="fade-up" data-aos-delay="200">
-            <h4>Naïve Bayes</h4>
-            <span
-              style="color: var(--secondary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Standard</span>
-            <div class="accuracy-badge"><span class="card-counter" data-target="77.5">77.5</span>%</div>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Uses TF-IDF. Solid baseline for text
-              classification tasks.</p>
+            <h4>Multinomial Naïve Bayes</h4>
+            <div class="accuracy-badge"><span class="card-counter" data-target="81.0">81.0</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">CountVectorizer. Best discrete feature baseline.</p>
           </div>
 
           <!-- Model 3 -->
           <div class="glass-card model-card" data-aos="fade-up" data-aos-delay="300">
-            <h4>Optimized SVM</h4>
-            <span
-              style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Pipeline</span>
-            <div class="accuracy-badge"><span class="card-counter" data-target="77.0">77.0</span>%</div>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">RBF Kernel with TF-IDF pipeline. Good for
-              high-dimensional spaces.</p>
+            <h4>Naïve Bayes</h4>
+            <div class="accuracy-badge"><span class="card-counter" data-target="77.5">77.5</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">TF-IDF. Solid baseline for text classification.</p>
           </div>
 
           <!-- Model 4 -->
           <div class="glass-card model-card" data-aos="fade-up" data-aos-delay="400">
+            <h4>Optimized SVM</h4>
+            <div class="accuracy-badge"><span class="card-counter" data-target="77.0">77.0</span>%</div>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">RBF Kernel. Effective in high-dimensional spaces.
+            </p>
+          </div>
+
+          <!-- Model 5 -->
+          <div class="glass-card model-card" data-aos="fade-up" data-aos-delay="500">
             <h4>Standard SVM</h4>
-            <span
-              style="color: var(--text-muted); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Baseline</span>
             <div class="accuracy-badge"><span class="card-counter" data-target="75.5">75.5</span>%</div>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Basic implementation without pipeline
-              optimization.</p>
+            <p style="color: var(--text-muted); font-size: 0.8rem;">SVC baseline without pipeline optimization.</p>
           </div>
         </div>
       </section>
@@ -223,10 +246,7 @@
               const step = (currentTime) => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-
-                // Ease out quart
                 const ease = 1 - Math.pow(1 - progress, 4);
-
                 const current = start + (target - start) * ease;
                 counter.innerText = current.toFixed(1);
 
@@ -236,13 +256,10 @@
                   animating = false;
                 }
               };
-
               requestAnimationFrame(step);
             });
 
             card.addEventListener('mouseleave', () => {
-              // Reset to 0 so it animates again on next hover? 
-              // Creating a slight delay or immediate reset
               counter.innerText = "0.0";
               animating = false;
             });
@@ -250,81 +267,102 @@
         });
       </script>
 
+      <!-- Demo Section -->
+      <section id="demo" style="margin-top: 6rem;">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Sentimental Intelligence</h2>
+          <p style="color: var(--text-muted);">Experience the model's production-grade performance.</p>
+        </div>
+        <div class="glass-card text-center" data-aos="zoom-in" style="padding: 4rem 2rem;">
+          <div style="font-size: 3.5rem; color: var(--accent); margin-bottom: 2rem;">
+            <i class="bx bx-rocket"></i>
+          </div>
+          <h3 style="color: var(--text-main); margin-bottom: 1.5rem;">Ready to See it in Action?</h3>
+          <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 2.5rem;">
+            To ensure the highest accuracy, we recommend experience the model through the full production interface. Use
+            the credentials below to log in.
+          </p>
+          <div
+            style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 2rem; background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; display: inline-block;">
+            <i class="bi bi-info-circle me-1"></i> Access: <strong>User</strong> / <strong>password</strong>
+          </div>
+          <br>
+          <a href="https://sentimental-analysis-whv6.onrender.com" target="_blank" class="nav-btn"
+            style="background: var(--primary); color: white; padding: 1rem 3rem; border: none;">Launch Production
+            App</a>
+        </div>
+      </section>
+
       <!-- Detailed Project Info -->
-      <section class="project-details-section" style="margin-bottom: 6rem; margin-top: 6rem;" data-aos="fade-up">
+      <section id="tech" class="project-details-section" style="margin-bottom: 6rem; margin-top: 6rem;"
+        data-aos="fade-up">
         <div class="section-header">
           <h2>Project Deep Dive</h2>
-          <p style="color: var(--text-muted);">Comprehensive analysis of the workflow and impact.</p>
+          <p style="color: var(--text-muted);">Comprehensive analysis of the workflow and tech stack.</p>
         </div>
 
         <div class="glass-card" style="display: flex; flex-wrap: wrap; gap: 3rem;">
 
           <!-- Main Content -->
           <div style="flex: 2; min-width: 300px;">
-            <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;">Sentimental Analysis</h3>
+            <h3 style="color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem;">The NLP Core</h3>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 2rem;">
               Sentiment analysis is the automated process of identifying and classifying subjective information in
-              text data. This might be an opinion, a judgment, or a feeling about a particular topic or product
-              feature. In this sentiment analysis, the most common type is ‘polarity detection’, which involves
-              classifying statements as positive, negative, or neutral. It is a tool that automatically monitors
-              emotions in conversations on social media platforms.
+              source materials.
+              It is the most common use of Natural Language Processing (NLP) to track the mood of the public about a
+              particular
+              product or topic, often referred to as <strong>Opinion Mining</strong>. Sentimate Pro pushes the
+              boundaries of this
+              field by fine-tuning the RoBERTa-base model to achieve a transformative accuracy of 99.50% over classical
+              baselines.
             </p>
 
-            <h3 style="color: var(--accent); margin-bottom: 1rem; font-size: 1.5rem;">Workflow Steps</h3>
+            <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.5rem;">Workflow Steps</h3>
             <ul style="list-style: none; padding: 0;">
               <li style="margin-bottom: 1.5rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">1. Read the
-                  Data Frame</strong>
-                <span style="color: var(--text-muted);">Importing the already classified data frame to train and
-                  test the model.</span>
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">1. Read the Data
+                  Frame</strong>
+                <span style="color: var(--text-muted);">Importing the already classified data frame to train and test
+                  the model using Python 3.9+.</span>
               </li>
               <li style="margin-bottom: 1.5rem;">
                 <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">2. Data
                   Analysis</strong>
-                <span style="color: var(--text-muted);">Finding whether the majority of customers are positive
-                  or negative and identifying the most used keywords.</span>
+                <span style="color: var(--text-muted);">Finding whether the majority of customers are positive or
+                  negative and identifying the most used emotion-driven keywords.</span>
               </li>
               <li style="margin-bottom: 1.5rem;">
                 <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">3. Classifying
-                  Tweets</strong>
-                <span style="color: var(--text-muted);">Classifying reviews into “positive” and “negative” to
-                  use as training data for the sentiment classification model.</span>
+                  Reviews</strong>
+                <span style="color: var(--text-muted);">Classifying raw reviews into “positive” and “negative” to use as
+                  high-quality training data for the neural network.</span>
               </li>
               <li style="margin-bottom: 1.5rem;">
                 <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">4. Building the
                   Model</strong>
-                <span style="color: var(--text-muted);">Building the sentiment analysis model. The data frame is
-                  split into a training set (80%) and a test set (20%).</span>
+                <span style="color: var(--text-muted);">Orchestrating the Deep Learning architecture with PyTorch. The
+                  data is split into a training set (80%) and a test set (20%).</span>
               </li>
               <li style="margin-bottom: 1.5rem;">
                 <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">5.
-                  Vectorization</strong>
-                <span style="color: var(--text-muted);">Using a count vectorizer from the Scikit-learn library
-                  to transform text into a bag-of-words model.</span>
+                  Tokenization</strong>
+                <span style="color: var(--text-muted);">Utilizing RoBERTa's advanced tokenizer from the Hugging Face
+                  Transformers library to transform text into rich contextual embeddings.</span>
               </li>
               <li style="margin-bottom: 1.5rem;">
-                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">6.
+                <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">6. Model
                   Training</strong>
-                <span style="color: var(--text-muted);">Training the model using methods like SVM, Pipeline,
-                  Naive Bayes, and Multinomial NB.</span>
+                <span style="color: var(--text-muted);">Custom fine-tuning of the roberta-base model weights over
+                  multiple epochs to specialize it for emotional classification.</span>
               </li>
               <li>
                 <strong style="color: var(--text-main); display: block; margin-bottom: 0.25rem;">7. Accuracy &
                   Usage</strong>
-                <span style="color: var(--text-muted);">Finding the accuracy of the model and using it to
-                  classify new text as positive or negative.</span>
+                <span style="color: var(--text-muted);">Achieving 99.50% accuracy on benchmarks and using a Django REST
+                  backend for real-time production inference.</span>
               </li>
             </ul>
 
-            <h3 style="color: var(--secondary); margin-top: 2rem; margin-bottom: 1rem; font-size: 1.5rem;">Benefits
-              & Convenience</h3>
-            <ul style="color: var(--text-muted); padding-left: 1.2rem; line-height: 1.8;">
-              <li style="margin-bottom: 0.5rem;"><strong>Understanding Customer Feelings:</strong> Identities
-                whether opinions are positive, negative, or neutral, providing valuable insights into customer
-                satisfaction.</li>
-              <li><strong>Improved Decision Making:</strong> Businesses can make data-driven decisions to enhance
-                their offerings and address customer concerns.</li>
-            </ul>
           </div>
 
           <!-- Sidebar Info -->
@@ -335,12 +373,24 @@
                 style="color: var(--text-main); margin-bottom: 1.5rem; border-bottom: 1px solid var(--card-border); padding-bottom: 0.5rem;">
                 Project Info</h3>
               <ul style="list-style: none; padding: 0; color: var(--text-muted); line-height: 2;">
-                <li><strong style="color: var(--text-main);">Category:</strong> Machine Learning</li>
-                <li><strong style="color: var(--text-main);">Project Date:</strong> 01 March, 2022</li>
+                <li><strong style="color: var(--text-main);">Category:</strong> Machine Learning / NLP</li>
+                <li><strong style="color: var(--text-main);">Status:</strong> Production Ready</li>
                 <li><strong style="color: var(--text-main);">Project URL:</strong> <a
                     href="https://github.com/hemu33662/Sentimental_Analysis"
                     style="color: var(--primary); text-decoration: none;">GitHub Link</a></li>
               </ul>
+            </div>
+            <div
+              style="margin-top: 2rem; background: rgba(255,255,255,0.03); padding: 2rem; border-radius: 16px; border: 1px solid var(--card-border);">
+              <h3 style="color: var(--text-main); margin-bottom: 1rem;">Tech Stack</h3>
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span
+                  style="background: rgba(59,130,246,0.1); color: var(--primary); padding: 2px 10px; border-radius: 5px; font-size: 0.8rem;">RoBERTa</span>
+                <span
+                  style="background: rgba(16,185,129,0.1); color: var(--accent); padding: 2px 10px; border-radius: 5px; font-size: 0.8rem;">PyTorch</span>
+                <span
+                  style="background: rgba(139,92,246,0.1); color: var(--secondary); padding: 2px 10px; border-radius: 5px; font-size: 0.8rem;">Django</span>
+              </div>
             </div>
           </div>
 
@@ -372,12 +422,61 @@
   <script src="icons/swiper/swiper-bundle.min.js"></script>
   <script src="icons/typed.js/typed.umd.js"></script>
   <script src="icons/waypoints/noframework.waypoints.js"></script>
-  <script src="icons/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="jss/main.js"></script>
   <!-- Interactive BG -->
   <script src="jss/neural-bg.js"></script>
+
+  <script>
+    // Chart Initialization
+    const ctx = document.getElementById('accuracyChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Standard SVM', 'Optimized SVM', 'Naïve Bayes', 'Multinomial NB', 'RoBERTa'],
+        datasets: [{
+          label: 'Accuracy (%)',
+          data: [75.5, 77.0, 77.5, 81.0, 99.5],
+          backgroundColor: [
+            'rgba(255, 255, 255, 0.1)',
+            'rgba(255, 255, 255, 0.2)',
+            'rgba(255, 255, 255, 0.3)',
+            'rgba(59, 130, 246, 0.4)',
+            'rgba(16, 185, 129, 0.6)'
+          ],
+          borderColor: [
+            'rgba(255, 255, 255, 0.3)',
+            'rgba(255, 255, 255, 0.4)',
+            'rgba(255, 255, 255, 0.5)',
+            '#3b82f6',
+            '#10b981'
+          ],
+          borderWidth: 1,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { display: false }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: { color: 'rgba(255, 255, 255, 0.05)' },
+            ticks: { color: '#94a3b8' }
+          },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#94a3b8' }
+          }
+        }
+      }
+    });
+
+  </script>
 
 </body>
 
